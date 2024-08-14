@@ -39,6 +39,7 @@ export const Modal: React.FC<ModalProps> = ({
   const [discord_tag, setDiscordTag] = useState("");
 
   const STORAGE_KEY = "validatedMissions";
+  const VALIDATION_TIMEOUT = 10000;
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -75,51 +76,42 @@ export const Modal: React.FC<ModalProps> = ({
     } else {
       setTimeout(() => {
         handleValidationSuccess(missionKey);
-      }, 15000);
+      }, VALIDATION_TIMEOUT);
     }
   };
 
   const handleValidation = async (missionKey: string) => {
     if (missionKey === "Mission-1" && !telegram_username) {
       toast({
-        title: "❎No phone number entered.",
-        description: "Please enter your phone number!",
+        title: "❎No Telegram username entered.",
+        description: "Please enter your Telegram username!",
       });
       return;
     }
     if (missionKey === "Mission-2" && !discord_tag) {
       toast({
-        title: "❎No Discord tag entered.",
-        description: "Please enter your Discord tag!",
+        title: "❎No Discord username entered.",
+        description: "Please enter your Discord username!",
       });
       return;
     }
     setSubmitting(true);
     try {
-      const fetchFunction =
-        missionKey === "Mission-1"
-          ? async () =>
-              fetch(`http://teapot.thejoin.io/helper/verify-telegram`, {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  username: telegram_username,
-                }),
-              })
-          : async () =>
-              fetch(`http://teapot.thejoin.io/helper/verify-discord`, {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  username: discord_tag,
-                }),
-              });
+      const url =
+     missionKey === "Mission-1"
+       ? `http://teapot.thejoin.io/helper/verify-telegram/`
+       : `http://teapot.thejoin.io/helper/verify-discord/`;
 
-      const response = await fetchFunction();
+   const username =
+     missionKey === "Mission-1" ? telegram_username : discord_tag;
+
+   const response = await fetch(url, {
+     method: "POST",
+     headers: {
+       "Content-Type": "application/json",
+     },
+     body: JSON.stringify({ username }),
+   });
 
       const data = await response.json();
 
@@ -127,6 +119,8 @@ export const Modal: React.FC<ModalProps> = ({
         handleValidationSuccess(missionKey);
         setTelegramUsername(""),
         setDiscordTag("")
+        setShowMission1Form(false)
+        setShowMission2Form(false)
       } else {
         toast({
           title: "❎Verification failed",
@@ -298,7 +292,10 @@ export const Modal: React.FC<ModalProps> = ({
             </div>
           )}
           {showMission1Form ? (
-            <div>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              handleValidation(missionKey);
+            }}>
               <input
                 type="text"
                 value={telegram_username}
@@ -308,9 +305,7 @@ export const Modal: React.FC<ModalProps> = ({
               />
               <Button
                 disabled={submitting}
-                onClick={() => {
-                  handleValidation(missionKey);
-                }}
+                type="submit"
                 className="mx-auto mt-2 mb-4 sm:mb-8 scale-125 hover:scale-[1.2] active:scale-125"
               >
                 {submitting ? (
@@ -319,9 +314,12 @@ export const Modal: React.FC<ModalProps> = ({
                   <span className="scale-90 min-w-[80px]">Submit</span>
                 )}
               </Button>
-            </div>
+            </form>
           ) : showMission2Form ? (
-            <div>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              handleValidation(missionKey);
+            }}>
               <input
                 type="text"
                 value={discord_tag}
@@ -331,9 +329,7 @@ export const Modal: React.FC<ModalProps> = ({
               />
               <Button
                 disabled={submitting}
-                onClick={() => {
-                  handleValidation(missionKey);
-                }}
+                type="submit"
                 className="mx-auto mt-2 mb-4 sm:mb-8 scale-125 hover:scale-[1.2] active:scale-125"
               >
                 {submitting ? (
@@ -342,7 +338,7 @@ export const Modal: React.FC<ModalProps> = ({
                   <span className="scale-90 min-w-[80px]">Submit</span>
                 )}
               </Button>
-            </div>
+            </form>
           ) : (
             <Button
               disabled={missionValidationState.validating}

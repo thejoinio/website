@@ -218,7 +218,7 @@ export const Missions = () => {
       setStatus("idle");
       toast({
         title: "❎ No email entered",
-        description: "Please enter an email address.",
+        description: "Please enter YOUR email address.",
       });
       return;
     }
