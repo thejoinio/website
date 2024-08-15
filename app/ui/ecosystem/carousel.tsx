@@ -90,30 +90,28 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
   ...rest
 }) => {
   const currentSlide = rest.carouselState?.currentSlide ?? 0;
-  const [toggleButton, setToggleButton] = useState(false);
+  const totalSlides = rest.carouselState?.totalItems ?? 2;
 
   const handleClick = () => {
-    if (next && currentSlide !== 0) {
-      next();
-      setToggleButton(!toggleButton);
-    } else if (previous && currentSlide === 0) {
-      previous();
-      setToggleButton(!toggleButton);
+    if (currentSlide === totalSlides - 1) {
+      previous?.();
+    } else {
+      next?.();
     }
   };
+
+  const isRightPosition = currentSlide % 2 !== 0;
 
   return (
     <div className="carousel-button-group absolute w-full h-[3px] bottom-0 bg-[#5E5E5E] rounded-[2.286px]">
       <button
-        className={`${
-          toggleButton || currentSlide % 2 === 0
-            ? "translate-x-0"
-            : "translate-x-full"
-        } w-1/2 h-[3px] bg-[#02A8FB] absolute bottom-0 animated-button transition-transform duration-500 rounded-[2.286px]`}
+        className={`
+          w-1/2 h-[3px] bg-[#02A8FB] absolute bottom-0 
+          transition-transform duration-500 rounded-[2.286px]
+          ${isRightPosition ? "translate-x-full" : "translate-x-0"}
+        `}
         onClick={handleClick}
-        disabled={
-          (!next && currentSlide !== 0) || (!previous && currentSlide === 0)
-        }
+        disabled={(!next && !previous) || totalSlides <= 1}
       />
     </div>
   );

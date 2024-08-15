@@ -11,13 +11,7 @@ export default function Home() {
     <main>
       <Hero />
       <Possibilities />
-      <Ecosystem type="joinda" />
-      <div className="hidden lg:block">
-        <div className="flex w-full mt-[101px]">
-          <Divider />
-        </div>
-        <Ecosystem type="joint" />
-      </div>
+      <Ecosystem />
       <Marquee />
       <MarqueeSection />
     </main>

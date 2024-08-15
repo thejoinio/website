@@ -273,7 +273,7 @@ export const Navbar = () => {
         </div>
             {/* Mobile nav */}
           <div className={`
-            lg:hidden bg-background text-whitePrimary w-full fixed top-0 left-0 h-screen z-50 
+            lg:hidden bg-background text-whitePrimary w-full fixed top-0 left-0 h-screen z-[9999] 
             flex flex-col items-center pt-20 transition-transform duration-300
             ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
           `}>

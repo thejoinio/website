@@ -143,9 +143,9 @@ export const PossibilitiesCarousel: React.FC = () => {
         // "mobile",
       ]}
       itemClass="carousel-item-padding-40-px"
-      className="py-6 h-fit min-h-[522px] pl-0 px-8 md:px-[50px] lg:px-[80px]"
+      className="py-6 h-fit min-h-[522px] pl-0 px-8"
     >
-      <div className="ml-4 md:ml-0 mx-4 py-8 overflow-hidden h-full">
+      <div className="ml-4 mx-4 py-8 overflow-hidden h-full">
         <div className="flex flex-col bg-[#7F5CE2] bg-slide-primary max-w-[352px] w-full h-full min-h-[522px] rounded-3xl bg-cover">
           <p className="text-lg text-white p-7">
             Use <span className="font-bold">JOIN</span> as a secure and

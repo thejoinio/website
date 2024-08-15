@@ -16,7 +16,7 @@ export const MarqueeSection = () => {
       style={gradientStyle}
       className="flex flex-col md:flex-row items-center justify-center px-6 w-[calc(100%_-_32px)] sm:w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto rounded-[50px]"
     >
-      <div className="flex flex-col w-full md:w-[45%] items-center justify-center pb-4 pt-8 sm:py-10 md:py-[100px]">
+      <div className="flex flex-col w-full md:w-[45%] items-center justify-center pb-10 pt-14 sm:py-10 md:py-[100px]">
         <h2 className="text-center text-3xl sm:text-4xl md:text-5xl text-white font-bold mb-10 md:mb-[60px] w-full max-w-[12ch]">
           With JOIN, every dream is a possibility{" "}
         </h2>
@@ -28,7 +28,7 @@ export const MarqueeSection = () => {
           Join Whitelisting{" "}
         </Button>
       </div>
-      <div className="flex items-center justify-center w-full md:w-[55%]">
+      <div className="flex items-center justify-center w-full md:w-[55%] pb-10 md:pb-0">
         <Image
           src={tokens}
           width={1200}
