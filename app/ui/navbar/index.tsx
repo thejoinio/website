@@ -4,7 +4,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
@@ -21,7 +20,10 @@ import { NavUnderline } from "@/app/assets/svg";
 import { useState } from "react";
 import clsx from "clsx";
 import Image from "next/image";
-import JoinTelegram from '@/app/assets/community/telegram.png';
+import JoinTelegram from "@/app/assets/community/telegram.png";
+import JoinDiscord from "@/app/assets/community/discord.png";
+import JoinLinkedIn from "@/app/assets/community/linkedin.png";
+import JoinTwitter from "@/app/assets/community/x.png";
 
 interface NavLink {
   label: string;
@@ -34,7 +36,7 @@ interface NavLink {
     icon?: JSX.Element;
     background?: string;
     title: string;
-    subtitle: string;
+    subtitle?: string;
   }[];
 }
 
@@ -45,10 +47,55 @@ const navLinksLeft: NavLink[] = [
     subLinks: [
       {
         title: "Telegram",
-        subtitle: "Join our community on Telegram",
         path: "https://t.me/JoinAllinOneEco",
-        background: 'linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(14,127,184,0.40)_85.38%)',
-        icon: <Image src={JoinTelegram} alt="Telegram and Join logos stacked together" className="ml-auto max-h-[120px] w-auto" />
+        background:
+          "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(14,127,184,0.40)_85.38%)",
+        icon: (
+          <Image
+            src={JoinTelegram}
+            alt="Telegram and Join logos stacked together"
+            className="ml-auto max-h-[120px] w-auto"
+          />
+        ),
+      },
+      {
+        title: "Discord",
+        path: "https://discord.gg/8aNnVw8q",
+        background:
+         "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(135,164,213,0.40)_85.38%)",
+        icon: (
+          <Image
+            src={JoinDiscord}
+            alt="Discord and Join logos stacked together"
+            className="ml-auto max-h-[120px] w-auto"
+          />
+        ),
+      },
+      {
+        title: "LinkedIn",
+        path: "https://linkedin.com",
+        background:
+         "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(0,91,188,0.40)_85.38%)",
+        icon: (
+          <Image
+            src={JoinLinkedIn}
+            alt="LinkedIn and Join logos stacked together"
+            className="ml-auto max-h-[120px] w-auto"
+          />
+        ),
+      },
+      {
+        title: "Twitter",
+        path: "https://twitter.com/intent/follow?screen_name=joineco",
+        background:
+          "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(4,4,4,0.40)_85.38%)",
+        icon: (
+          <Image
+            src={JoinTwitter}
+            alt="Twitter and Join logos stacked together"
+            className="ml-auto max-h-[120px] w-auto"
+          />
+        ),
       },
     ],
   },
@@ -124,27 +171,23 @@ export const Navbar = () => {
                         >
                           {navLink.label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="w-fit min-w-[180px] p-5">
+                        <NavigationMenuContent className="flex w-full min-w-[180px] gap-4 p-5">
                           {navLink.subLinks &&
                             navLink.subLinks.map((subLink, idx) => (
-                              <NavigationMenuLink
+                              <a
                                 key={idx}
-                                className="transition duration-200 group"
+                                href={subLink.path}
+                                target="_blank"
+                                className={`flex flex-col flex-grow w-fit min-w-[200px] xl:min-w-[314px] rounded-[15px] px-5 pt-6 pb-2 transition duration-200 border border-[rgba(255,255,255,0.10)] hover:border-[rgba(255,255,255,0.50)] bg-[${subLink.background}]`}
                               >
-                                <a
-                                  href={subLink.path}
-                                  target="_blank"
-                                  className={`flex flex-col w-fit min-w-[314px] rounded-[15px] px-5 pt-6 pb-2 transition duration-200 border border-[rgba(255,255,255,0.10)] hover:border-[rgba(255,255,255,0.50)] bg-[${subLink.background}]`}
-                                >
-                                  <h3 className="text-[15px] mb-[5px] font-semibold">
-                                    {subLink.title}
-                                  </h3>
-                                  <p className="text-xs">
-                                    {subLink.subtitle}
-                                  </p>
-                                  {subLink.icon}
-                                </a>
-                              </NavigationMenuLink>
+                                <h3 className="text-[15px] mb-[5px] font-semibold">
+                                  {subLink.title}
+                                </h3>
+                                <p className="text-xs">
+                                  Join our community on {subLink.title}
+                                </p>
+                                {subLink.icon}
+                              </a>
                             ))}
                         </NavigationMenuContent>
                       </NavigationMenuItem>
@@ -176,7 +219,7 @@ export const Navbar = () => {
                   >
                     {navLink.label}
                   </Link>
-                ),
+                )
               )}
             </ul>
             <Link
