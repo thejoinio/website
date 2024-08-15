@@ -4,9 +4,16 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
+  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { usePathname } from "next/navigation";
 import { Button } from "@/app/ui/button";
 import {
@@ -49,7 +56,8 @@ const navLinksLeft: NavLink[] = [
         title: "Telegram",
         path: "https://t.me/JoinAllinOneEco",
         background:
-          "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(14,127,184,0.40)_85.38%)",
+          'linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(14, 127, 184, 0.40) 85.38%)',
+          // "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(14,127,184,0.40)_85.38%)",
         icon: (
           <Image
             src={JoinTelegram}
@@ -62,7 +70,8 @@ const navLinksLeft: NavLink[] = [
         title: "Discord",
         path: "https://discord.gg/8aNnVw8q",
         background:
-         "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(135,164,213,0.40)_85.38%)",
+            "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(135, 164, 213, 0.40) 85.38%)",
+        //  "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(135,164,213,0.40)_85.38%)",
         icon: (
           <Image
             src={JoinDiscord}
@@ -75,7 +84,8 @@ const navLinksLeft: NavLink[] = [
         title: "LinkedIn",
         path: "https://linkedin.com",
         background:
-         "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(0,91,188,0.40)_85.38%)",
+         "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(0, 91, 188, 0.40) 85.38%)",
+        //  "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(0,91,188,0.40)_85.38%)",
         icon: (
           <Image
             src={JoinLinkedIn}
@@ -88,7 +98,8 @@ const navLinksLeft: NavLink[] = [
         title: "Twitter",
         path: "https://twitter.com/intent/follow?screen_name=joineco",
         background:
-          "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(4,4,4,0.40)_85.38%)",
+          "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(4, 4, 4, 0.40) 85.38%)",
+          // "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(4,4,4,0.40)_85.38%)"
         icon: (
           <Image
             src={JoinTwitter}
@@ -174,11 +185,12 @@ export const Navbar = () => {
                         <NavigationMenuContent className="flex w-full min-w-[180px] gap-4 p-5">
                           {navLink.subLinks &&
                             navLink.subLinks.map((subLink, idx) => (
-                              <a
+                              <NavigationMenuLink
                                 key={idx}
                                 href={subLink.path}
                                 target="_blank"
-                                className={`flex flex-col flex-grow w-fit min-w-[200px] xl:min-w-[314px] rounded-[15px] px-5 pt-6 pb-2 transition duration-200 border border-[rgba(255,255,255,0.10)] hover:border-[rgba(255,255,255,0.50)] bg-[${subLink.background}]`}
+                                style={{background: subLink.background}}
+                                className={`flex flex-col flex-grow w-fit min-w-[200px] lg:min-w-[200px] xl:min-w-[250px] 2xl:min-w-[300px] rounded-[15px] px-5 pt-6 pb-2 transition duration-200 border border-[rgba(255,255,255,0.10)] hover:border-[rgba(255,255,255,0.50)]`}
                               >
                                 <h3 className="text-[15px] mb-[5px] font-semibold">
                                   {subLink.title}
@@ -187,7 +199,7 @@ export const Navbar = () => {
                                   Join our community on {subLink.title}
                                 </p>
                                 {subLink.icon}
-                              </a>
+                              </NavigationMenuLink>
                             ))}
                         </NavigationMenuContent>
                       </NavigationMenuItem>
@@ -197,7 +209,7 @@ export const Navbar = () => {
                   <Button
                     key={`${navLink} ${idx}`}
                     variant={navLink.buttonType}
-                    className="font-semibold !uppercase text-[15px] transition-colors min-h-10 !h-fit"
+                    className="font-semibold !uppercase !text-[15px] transition-colors min-h-10 !h-fit"
                     disabled={
                       navLink?.disabled && navLink.disabled ? true : false
                     }
@@ -259,8 +271,12 @@ export const Navbar = () => {
         <div className="flex md:hidden justify-center items-center overflow-hidden z-50">
           <NavUnderlineMobile />
         </div>
-        {isMobileMenuOpen && (
-          <div className="lg:hidden bg-background text-whitePrimary w-full fixed top-0 left-0 h-screen z-50 flex flex-col items-center justify-center transition-transform duration-300">
+            {/* Mobile nav */}
+          <div className={`
+            lg:hidden bg-background text-whitePrimary w-full fixed top-0 left-0 h-screen z-50 
+            flex flex-col items-center pt-20 transition-transform duration-300
+            ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
+          `}>
             <button
               onClick={toggleMobileMenu}
               className="absolute top-8 right-4 sm:right-8 md:right-[50px] hover:scale-90 active:scale-100 transition duration-200"
@@ -282,7 +298,44 @@ export const Navbar = () => {
                   {navLink.label}
                 </Button>
               ))}
-              {navLinksLeft.map((navLink, idx) => (
+              {navLinksLeft.map((navLink, idx) =>
+                navLink.type === "dropdown" ? (
+                  <Accordion
+                type="single"
+                collapsible
+                key={idx}
+              >
+                <AccordionItem value={`item-${idx}`} className="border-b-0">
+                  <AccordionTrigger
+                    className={`hover:no-underline py-0 font-medium text-left text-[#F2E6E0] hover:text-hoverPrimary uppercase flex items-center min-w-[127px]`}
+                  >
+                    {navLink.label}
+                  </AccordionTrigger>
+                    {navLink.subLinks &&
+                      navLink.subLinks.map((subLink, idx) => (
+                        <AccordionContent
+                          className="group pt-3 pb-0 text-base text-left"
+                          key={idx}
+                        >
+                          <Link
+                            href={subLink.path}
+                            target="_blank"
+                            className="text-[#F2E6E0] hover:text-hoverPrimary flex space-x-3 items-center group-hover:bg-primary-50 space-y-2"
+                          >
+                            <div style={{background: subLink.background}} className="group-hover:bg-primary-100 w-8 h-8 flex justify-center items-center bg-white shadow-custom rounded">
+                              {subLink.icon}
+                            </div>
+                            <div>
+                              <div className="text-base mb-1">
+                                {subLink.title}
+                              </div>
+                            </div>
+                          </Link>
+                        </AccordionContent>
+                      ))}
+                </AccordionItem>
+              </Accordion>
+                ) : (
                 <Link
                   key={idx}
                   href={navLink.path ? navLink.path : "/"}
@@ -297,7 +350,6 @@ export const Navbar = () => {
               ))}
             </ul>
           </div>
-        )}
       </nav>
     </>
   );
