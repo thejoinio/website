@@ -18,8 +18,10 @@ import {
 } from "@/app/assets/svg";
 import { useRouter } from "next/navigation";
 import { NavUnderline } from "@/app/assets/svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
+import Image from "next/image";
+import JoinTelegram from '@/app/assets/community/telegram.png';
 
 interface NavLink {
   label: string;
@@ -30,6 +32,7 @@ interface NavLink {
   subLinks?: {
     path: string;
     icon?: JSX.Element;
+    background?: string;
     title: string;
     subtitle: string;
   }[];
@@ -38,9 +41,22 @@ interface NavLink {
 const navLinksLeft: NavLink[] = [
   {
     label: "Community",
-    path: "/community",
-    type: "text",
+    type: "dropdown",
+    subLinks: [
+      {
+        title: "Telegram",
+        subtitle: "Join our community on Telegram",
+        path: "https://t.me/JoinAllinOneEco",
+        background: 'linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(14,127,184,0.40)_85.38%)',
+        icon: <Image src={JoinTelegram} alt="Telegram and Join logos stacked together" className="ml-auto max-h-[120px] w-auto" />
+      },
+    ],
   },
+  // {
+  //   label: "Community",
+  //   path: "/community",
+  //   type: "text",
+  // },
   {
     label: "Whitepaper",
     path: "/whitepaper",
@@ -108,21 +124,26 @@ export const Navbar = () => {
                         >
                           {navLink.label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="min-w-[180px] p-2">
+                        <NavigationMenuContent className="w-fit min-w-[180px] p-5">
                           {navLink.subLinks &&
                             navLink.subLinks.map((subLink, idx) => (
                               <NavigationMenuLink
                                 key={idx}
                                 className="transition duration-200 group"
                               >
-                                <Link
+                                <a
                                   href={subLink.path}
-                                  className="flex space-x-3 w-full group-hover:bg-primary-50 rounded p-2 transition duration-200"
+                                  target="_blank"
+                                  className={`flex flex-col w-fit min-w-[314px] rounded-[15px] px-5 pt-6 pb-2 transition duration-200 border border-[rgba(255,255,255,0.10)] hover:border-[rgba(255,255,255,0.50)] bg-[${subLink.background}]`}
                                 >
-                                  <div className="text-base mb-1">
+                                  <h3 className="text-[15px] mb-[5px] font-semibold">
                                     {subLink.title}
-                                  </div>
-                                </Link>
+                                  </h3>
+                                  <p className="text-xs">
+                                    {subLink.subtitle}
+                                  </p>
+                                  {subLink.icon}
+                                </a>
                               </NavigationMenuLink>
                             ))}
                         </NavigationMenuContent>
