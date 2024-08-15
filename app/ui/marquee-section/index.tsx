@@ -2,10 +2,8 @@
 import Image from "next/image";
 import { Button } from "../button";
 import tokens from "@/app/assets/images/join-tokens.webp";
-import { useRouter } from "next/navigation";
 
 export const MarqueeSection = () => {
-  const { push } = useRouter();
   const gradientStyle = {
     background:
       "linear-gradient(98deg, rgba(102, 254, 203, 0.20) 6.1%, rgba(137, 64, 255, 0.20) 103.66%), rgba(29, 29, 29, 0.05)",
@@ -18,14 +16,16 @@ export const MarqueeSection = () => {
     >
       <div className="flex flex-col w-full md:w-[45%] items-center justify-center pb-10 pt-14 sm:py-10 md:py-[100px]">
         <h2 className="text-center text-3xl sm:text-4xl md:text-5xl text-white font-bold mb-10 md:mb-[60px] w-full max-w-[12ch]">
-          With JOIN, every dream is a possibility{" "}
+          With JOIN Community, every dream is a possibility{" "}
         </h2>
         <Button
           variant="shaped-white"
           className="scale-125 hover:!scale-[1.2]"
-          onClick={() => push("/whitelisting")}
+          onClick={() => {
+            window.open('https://t.me/JoinAllinOneEco', '_blank', 'noopener,noreferrer');
+          }}
         >
-          Join Whitelisting{" "}
+          Join Community{" "}
         </Button>
       </div>
       <div className="flex items-center justify-center w-full md:w-[55%] pb-10 md:pb-0">
