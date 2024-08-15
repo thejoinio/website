@@ -71,10 +71,10 @@ const mission1Data: MissionData[] = [
     icon: (
       <Image src={XIcon} alt="X Icon" width={30} height={30} className="mx-1" />
     ),
-    link: "https://twitter.com/intent/follow?screen_name=cyberjunta",
+    link: "https://twitter.com/intent/follow?screen_name=cybadaddy",
     description: "Follow Co-founder Dave",
     boldParts: ["Co-founder"],
-    handle: "cyberjunta",
+    handle: "cybadaddy",
   },
   {
     id: 5,

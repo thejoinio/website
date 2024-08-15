@@ -12,8 +12,7 @@ const ComingSoon = () => {
           Coming Soon
         </h1>
         <p className="mt-4 text-whitePrimary text-lg text-center">
-          We&apos;re working hard to bring you something amazing. Check back
-          later!
+          We&apos;re cooking something for your delight. <br /> While we cook, you can proceed to joining our Community!
         </p>
         <Link href={"/"}>
           <Button variant="shaped-white">Go Back Home</Button>

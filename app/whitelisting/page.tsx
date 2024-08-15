@@ -1,13 +1,12 @@
-import { Marquee } from "@/app/ui/marquee";
-import { MarqueeSection } from "@/app/ui/marquee-section";
-import { Missions } from "@/app/ui/missions";
+import { VideoBackground } from "../ui/bg-video";
+import ComingSoon from "../ui/coming-soon";
+import { Navbar } from "../ui/navbar";
 
-export default function Whitelist() {
+export default function Whitepaper() {
   return (
-    <main>
-      <Missions />
-      <Marquee />
-      <MarqueeSection />
-    </main>
+    <VideoBackground as="section">
+      <Navbar />
+      <ComingSoon />
+    </VideoBackground>
   );
 }
