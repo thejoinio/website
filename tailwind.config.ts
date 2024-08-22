@@ -32,6 +32,17 @@ const config = {
         'joinda-linear': "linear-gradient(98deg, rgba(102, 254, 203, 0.20) 6.1%, rgba(137, 64, 255, 0.20) 103.66%), rgba(29, 29, 29, 0.05)",
         'shaped-gradient': "url('/shaped-gradient-outline-big.png')",
         'nft': "url('/presale-bg.png')",
+        'presale-pattern': "url('/presale-pattern.png'), url('/presale-pattern-flipped.png')",
+        'presale-flare': "url('/presale-flare.png')"
+      },
+      backgroundPosition: {
+        'presale-pattern': 'top, bottom',
+      },
+      backgroundSize: {
+        'presale-pattern': '100% 40%, 100% 60%', 
+      },
+      backgroundRepeat: {
+        'presale-pattern': 'no-repeat, no-repeat', 
       },
       maxWidth: {
         "8xl": "1440px",
@@ -61,6 +72,10 @@ const config = {
           '0%, 100%': { transform: "translateY(-4%)" },
           '50%': { transform: "translateY(4%)" },
         },
+        "bounce-nft": {
+          '0%, 100%': { transform: "translateY(4%)" },
+          '50%': { transform: "translateY(-4%)" },
+        },
         'fade-in-out-grow-shrink': {
           '0%, 100%': { opacity: "0.1", transform: 'scale(0.8)' },
           '50%': { opacity: "1", transform: 'scale(1.2)' },
@@ -73,6 +88,7 @@ const config = {
         "slide-in": "slide-in 0.2s ease-in-out forwards",
         "slide-out": "slide-out 0.2s ease-in-out forwards",
         "bounce-token": "bounce-token 3s linear infinite",
+        "bounce-nft": "bounce-nft 3s linear infinite",
         'fade-in-out-grow-shrink': 'fade-in-out-grow-shrink 3s infinite',
       },
       transitionProperty: {

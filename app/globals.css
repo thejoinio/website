@@ -82,6 +82,20 @@ button .border-gradient {
   background-clip: text;
   text-fill-color: transparent;
 }
+.join-presale-heading {
+  background: linear-gradient(90deg, #C8C8C8 4.29%, #878787 97.5%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-fill-color: transparent;
+}
+.join-presale-text {
+  background: linear-gradient(96deg, #1C1C1C -9.54%, #FFF 49.6%, #303030 105.26%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-fill-color: transparent;
+}
 .telegram-text-gradient {
   background: linear-gradient(90deg, #0198EA 51.35%, #14BCFA 80.71%);
 background-clip: text;

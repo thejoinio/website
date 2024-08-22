@@ -57,40 +57,46 @@ const navLinksLeft: NavLink[] = [
         path: "https://t.me/JoinAllinOneEco",
         background:
           'linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(14, 127, 184, 0.40) 85.38%)',
-          // "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(14,127,184,0.40)_85.38%)",
         icon: (
           <Image
             src={JoinTelegram}
             alt="Telegram and Join logos stacked together"
             className="ml-auto max-h-[120px] w-auto"
+            width={500}
+            height={360}
+            placeholder="blur"
           />
         ),
       },
       {
         title: "Discord",
-        path: "https://discord.gg/8aNnVw8q",
+        path: "https://discord.gg/joineco",
         background:
             "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(135, 164, 213, 0.40) 85.38%)",
-        //  "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(135,164,213,0.40)_85.38%)",
         icon: (
           <Image
             src={JoinDiscord}
             alt="Discord and Join logos stacked together"
             className="ml-auto max-h-[120px] w-auto"
+            width={500}
+            height={360}
+            placeholder="blur"
           />
         ),
       },
       {
         title: "LinkedIn",
-        path: "https://linkedin.com",
+        path: "https://www.linkedin.com/company/thejoineco",
         background:
          "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(0, 91, 188, 0.40) 85.38%)",
-        //  "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(0,91,188,0.40)_85.38%)",
         icon: (
           <Image
             src={JoinLinkedIn}
             alt="LinkedIn and Join logos stacked together"
             className="ml-auto max-h-[120px] w-auto"
+            width={500}
+            height={360}
+            placeholder="blur"
           />
         ),
       },
@@ -99,22 +105,19 @@ const navLinksLeft: NavLink[] = [
         path: "https://twitter.com/intent/follow?screen_name=joineco",
         background:
           "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(4, 4, 4, 0.40) 85.38%)",
-          // "linear-gradient(112deg,rgba(4,20,29,0.40)_14.96%,rgba(4,4,4,0.40)_85.38%)"
         icon: (
           <Image
             src={JoinTwitter}
             alt="Twitter and Join logos stacked together"
             className="ml-auto max-h-[120px] w-auto"
+            width={500}
+            height={360}
+            placeholder="blur"
           />
         ),
       },
     ],
   },
-  // {
-  //   label: "Community",
-  //   path: "/community",
-  //   type: "text",
-  // },
   {
     label: "Whitepaper",
     path: "/whitepaper",
@@ -123,7 +126,7 @@ const navLinksLeft: NavLink[] = [
   },
   // {
   //   label: "Products",
-  //   type: "dropdown",
+  //   type: "dropdown"
   //   subLinks: [
   //     {
   //       title: "Link 1",
@@ -138,7 +141,6 @@ const navLinksRight: NavLink[] = [
     label: "Join Whitelisting",
     path: "/whitelisting",
     type: "button",
-    buttonType: "shaped",
     disabled: false,
   },
   {

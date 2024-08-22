@@ -2,32 +2,48 @@
 import Link from "next/link";
 import {
   AppIcon,
-  AppStoreIcon,
   ControllerIcon,
   Divider,
   JoinEcoToken,
   JoinEcoTokenSm,
   OutlineSend,
-  PlayStoreIcon,
 } from "@/app/assets/svg";
 import { VideoBackground } from "@/app/ui/bg-video";
 import { Button } from "../button";
 import { EcosystemCarousel } from "./carousel";
 import { useState } from "react";
-// import playstore from '/playstore.svg'
-// import appstore from '/appstore.svg'
-// import appstore from '/appstore.png'
 import Image from "next/image";
 import appstore from "@/app/assets/appstore.png";
-import playtore from "@/app/assets/playstore.png";
+import playstore from "@/app/assets/playstore.png";
+
+const StoreButtons = () => {
+  return (
+    <div className="flex gap-5 mt-[30px] mb-10">
+      <button aria-label="Download on Play Store" className="flex max-w-[136px] hover:scale-95 active:scale-100 transition duration-200">
+        <Image
+          src={playstore}
+          alt="Download on Play Store"
+          width={409}
+          height={142}
+        />
+      </button>
+      <button aria-label="Download on App Store" className="flex max-w-[122px] hover:scale-95 active:scale-100 transition duration-200">
+        <Image
+          src={appstore}
+          alt="Download on App Store"
+          width={367}
+          height={142}
+        />
+      </button>
+    </div>
+  );
+};
 
 export const Ecosystem: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"joint" | "joinda">("joinda");
   return (
     <VideoBackground as="section">
-      <div
-        className="w-[calc(100%_-_32px)] sm:w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto flex flex-col items-center pt-2 lg:pt-20"
-      >
+      <div className="w-[calc(100%_-_32px)] sm:w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto flex flex-col items-center pt-2 lg:pt-20">
         <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold inline-flex items-center mt-[45px] mb-16 lg:mb-6">
           The{" "}
           <JoinEcoTokenSm className="inline-flex md:hidden mx-2 translate-y-0.5 sm:translate-y-1 w-[100px] sm:w-full" />{" "}
@@ -76,18 +92,11 @@ export const Ecosystem: React.FC = () => {
                 </ul>
                 <Button
                   variant="shaped-gradient"
-                  className="flex justify-center items-center mt-5 mb-[30px]"
+                  className="flex justify-center items-center mt-5"
                 >
                   <span className="px-2">Visit Website</span> <OutlineSend />{" "}
                 </Button>
-                <div className="flex gap-5 mb-10">
-                  <Button variant="ordinary">
-                    <PlayStoreIcon />
-                  </Button>
-                  <Button variant="ordinary">
-                    <AppStoreIcon />
-                  </Button>
-                </div>
+                <StoreButtons />
                 <div className="w-full max-w-[600px] mx-auto bg-[#020C11] rounded-[20px] pt-9 px-12 mt-5">
                   <EcosystemCarousel type={activeTab} />
                 </div>
@@ -117,20 +126,12 @@ export const Ecosystem: React.FC = () => {
                 </ul>
                 <Button
                   variant="shaped-gradient"
-                  className="flex justify-center items-center mt-5 mb-[30px]"
+                  className="flex justify-center items-center mt-5"
                 >
-                  <span className="px-2">Visit Website</span> <OutlineSend />{" "}
+                  <span className="px-2 mt-1">Visit Website</span>{" "}
+                  <OutlineSend className="mt-1" />{" "}
                 </Button>
-                <div className="flex gap-5 mb-10">
-                  <Button variant="ordinary">
-                    <span>
-                      <PlayStoreIcon />
-                    </span>
-                  </Button>
-                  <Button variant="ordinary">
-                    <AppStoreIcon />
-                  </Button>
-                </div>
+                <StoreButtons />
                 <div className="w-full max-w-[600px] mx-auto bg-[#020C11] rounded-[20px] pt-9 px-12 mt-5">
                   <EcosystemCarousel type={activeTab} />
                 </div>
@@ -143,7 +144,7 @@ export const Ecosystem: React.FC = () => {
         <div className="bg-[rgba(4,20,29,0.70)] rounded-3xl py-14 pr-7 w-full hidden lg:flex">
           <div className="w-1/4 space-y-2">
             <button
-              onClick={()=>setActiveTab('joinda')}
+              onClick={() => setActiveTab("joinda")}
               className={`flex h-[60px] w-full items-center font-semibold text-xl px-10 py-[14px] transition duration-200 whitespace-nowrap hover:bg-[rgba(255,255,255,0.10)] ${
                 activeTab === "joinda"
                   ? "bg-[rgba(255,255,255,0.10)]"
@@ -154,7 +155,7 @@ export const Ecosystem: React.FC = () => {
               <AppIcon className="mr-[18px]" /> Joinda App
             </button>
             <button
-              onClick={()=>setActiveTab('joint')}
+              onClick={() => setActiveTab("joint")}
               className={`flex h-[60px] w-full items-center font-semibold text-xl px-10 py-[14px] transition duration-200 hover:bg-[rgba(255,255,255,0.10)] ${
                 activeTab === "joint"
                   ? "bg-[rgba(255,255,255,0.10)]"
@@ -220,16 +221,10 @@ export const Ecosystem: React.FC = () => {
               variant="shaped-gradient"
               className="-translate-x-4 flex justify-center items-center mt-5"
             >
-              <span className="px-2">Visit Website</span> <OutlineSend />{" "}
+              <span className="px-2 mt-1">Visit Website</span>{" "}
+              <OutlineSend className="mt-1" />{" "}
             </Button>
-            <div className="flex w-full gap-5">
-              <Button variant="ordinary">
-                <PlayStoreIcon />
-              </Button>
-              <Button variant="ordinary">
-                <AppStoreIcon />
-              </Button>
-            </div>
+            <StoreButtons />
           </div>
           <div className="w-2/5 bg-[#020C11] rounded-[20px] pt-9 px-12">
             <EcosystemCarousel type={activeTab} />

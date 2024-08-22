@@ -10,7 +10,7 @@ import pay from "@/app/assets/images/possibilities/pay.webp";
 import lotteries from "@/app/assets/images/possibilities/lotteries.webp";
 import rewards from "@/app/assets/images/possibilities/rewards.webp";
 import funds from "@/app/assets/images/possibilities/funds.webp";
-import nft from "@/app/assets/images/possibilities/nft.png";
+import nft from "@/app/assets/images/possibilities/nft.webp";
 
 const responsive1 = {
   superLargeDesktop: {
@@ -187,7 +187,7 @@ export const PossibilitiesCarousel: React.FC = () => {
         </div>
       </div>
       <div className="mx-4 py-8 overflow-hidden h-full">
-        <div className="bg-[#030E14] mix-blend-color-dodge max-w-[352px] w-full h-full min-h-[522px] rounded-3xl px-7 pt-0">
+        <div className="bg-[#030E14] max-w-[352px] w-full h-full min-h-[522px] rounded-3xl px-7 pt-0">
           <p className="text-lg text-white py-7">
             Introducing our{" "}
             <span className="font-bold text-[#89DAD0]">global</span>{" "}
@@ -219,7 +219,7 @@ export const PossibilitiesCarousel: React.FC = () => {
               width={822}
               height={1162}
               alt="3 Demigods nft stacked on top of each other"
-              className="flex mx-auto h-full w-auto object-scale-down mix-blend-normal animate-bounce-token"
+              className="flex mx-auto h-full w-auto object-scale-down mix-blend-normal animate-bounce-nft"
             />
           </div>
         </div>
