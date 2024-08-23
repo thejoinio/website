@@ -18,8 +18,9 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
         className={`absolute top-0 left-0 w-full h-full object-cover`}
         autoPlay={true}
         loop={true}
-        muted
+        muted={true}
         playsInline={true}
+        controls={false}
         preload="auto"
         poster="https://res.cloudinary.com/dh4rm7b7b/image/upload/v1723467984/Join/poster_bhcudc.png"
       >
@@ -31,7 +32,7 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({
         Your browser does not support the background video.
       </video>
       <div
-        className={`relative flex flex-col items-center justify-center w-full h-full z-50`}
+        className={`relative flex flex-col items-center justify-center w-full h-full`}
       >
         {children}
       </div>

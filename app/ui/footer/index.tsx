@@ -12,17 +12,17 @@ export const Footer = () => {
   const icons = [
     {
       title: "Telegram",
-      url: "https://t.me/",
+      url: "https://t.me/JoinAllinOneEco",
       icon: <TelegramIcon />,
     },
     {
       title: "Discord",
-      url: "https://discord.gg/",
+      url: "https://discord.gg/8aNnVw8q",
       icon: <DiscordIcon />,
     },
     {
       title: "Twitter",
-      url: "https://twitter.com/",
+      url: "https://twitter.com/joineco",
       icon: <TwitterIcon />,
     },
     {
@@ -41,7 +41,7 @@ export const Footer = () => {
           <JoinIcon className="scale-75 md:scale-100 w-[112px] h-[112px]" />
         </Link>
         <h4
-          className={`my-6 md:mt-8 md:mb-12 w-full text-center md:text-left max-w-[18ch] ${gilroy.className}`}
+          className={`my-6 md:mt-8 md:mb-12 w-full text-xl text-[rgba(255,255,255,0.50)] text-center md:text-left max-w-[18ch] ${gilroy.className}`}
         >
           With Join, every dream is a possibility.
         </h4>
@@ -57,11 +57,11 @@ export const Footer = () => {
           .
         </p>
       </div>
-      <div className="space-y-9 flex flex-col self-center md:self-end">
-        <Link href="/" className="underline flex justify-center md:justify-end">
+      <div className="space-y-6 md:space-y-9 flex flex-col self-center md:self-end">
+        <Link href="/" className={`${inter.className} text-[#A5A5A5] leading-6 my-9 md:my-0 underline flex justify-center md:justify-end`}>
           Privacy Policy
         </Link>
-        <ul className="flex space-x-6 md:space-x-10">
+        <ul className="grid grid-cols-2 gap-10 md:gap-0 md:flex md:space-x-10">
           {icons.map((icon, idx) => (
             <li key={idx} className="flex h-9 w-9 items-center justify-center">
               <a
@@ -76,7 +76,7 @@ export const Footer = () => {
           ))}
         </ul>
       </div>
-      <p className="md:hidden mb-6 mt-10 w-full text-center md:text-left max-w-[42ch]">
+      <p className="md:hidden mb-[52px] mt-[99px] w-full text-center md:text-left max-w-[42ch]">
         For investment inquiries, please{" "}
         <a href="mailto:investment@thejoin.io" className="underline">
           reach out

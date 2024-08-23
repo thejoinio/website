@@ -219,7 +219,7 @@ export const Modal: React.FC<ModalProps> = ({
         <div className="w-[90%] sm:w-3/4 mx-auto ">
           <div className="flex justify-center items-center mt-4">
             <LogoGradientMission className="hidden sm:block" />{" "}
-            <span className="ml-3 text-white text-3xl sm:text-5xl font-bold">
+            <span className="translate-y-0.5 ml-3 text-white text-3xl sm:text-5xl font-bold">
               Missions
             </span>
           </div>
@@ -351,7 +351,7 @@ export const Modal: React.FC<ModalProps> = ({
               }}
               className="mx-auto mt-2 mb-4 sm:mb-8 scale-125 hover:scale-[1.2] active:scale-125"
             >
-              <span className="scale-75 sm:scale-90">
+              <span className="scale-75 sm:scale-90 min-w-[158px]">
                 {missionValidationState.validating
                   ? "Validating..."
                   : missionValidationState.validated
