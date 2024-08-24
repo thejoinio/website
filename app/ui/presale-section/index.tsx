@@ -31,7 +31,7 @@ export const PresaleSection = () => {
             </Button>
             <div className="absolute top-0 left-0 w-full h-full">
               <div
-                className="absolute bottom-[20px] right-0 md:left-1/3 lg:left-1/2 h-[140px] w-[180px] bg-[url('/upto4.png')] bg-contain bg-center bg-no-repeat -z-10 mix-blend-color-dodge"
+                className="absolute bottom-[20px] right-0 md:left-[40%] lg:left-1/2 h-[140px] w-[180px] bg-[url('/upto41.png')] bg-contain bg-center bg-no-repeat -z-10 mix-blend-color-dodge"
                 aria-label="Up to 4% in direct and indirect SOLANA commissions when your refer"
               />
             </div>

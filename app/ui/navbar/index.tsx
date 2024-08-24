@@ -56,7 +56,7 @@ const navLinksLeft: NavLink[] = [
         title: "Telegram",
         path: "https://t.me/JoinAllinOneEco",
         background:
-          'linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(14, 127, 184, 0.40) 85.38%)',
+          "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(14, 127, 184, 0.40) 85.38%)",
         icon: (
           <Image
             src={JoinTelegram}
@@ -72,7 +72,7 @@ const navLinksLeft: NavLink[] = [
         title: "Discord",
         path: "https://discord.gg/joineco",
         background:
-            "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(135, 164, 213, 0.40) 85.38%)",
+          "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(135, 164, 213, 0.40) 85.38%)",
         icon: (
           <Image
             src={JoinDiscord}
@@ -88,7 +88,7 @@ const navLinksLeft: NavLink[] = [
         title: "LinkedIn",
         path: "https://www.linkedin.com/company/thejoineco",
         background:
-         "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(0, 91, 188, 0.40) 85.38%)",
+          "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(0, 91, 188, 0.40) 85.38%)",
         icon: (
           <Image
             src={JoinLinkedIn}
@@ -119,36 +119,43 @@ const navLinksLeft: NavLink[] = [
     ],
   },
   {
+    label: "Partners",
+    type: "dropdown",
+    disabled: true,
+    subLinks: [
+      {
+        title: "Partner 1",
+        path: "/",
+        background:
+          "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(14, 127, 184, 0.40) 85.38%)",
+      },
+    ],
+  },
+  {
     label: "Whitepaper",
     path: "/whitepaper",
-    type: "button",
-    buttonType: "text",
+    type: "text",
+    // buttonType: "text",
   },
-  // {
-  //   label: "Products",
-  //   type: "dropdown"
-  //   subLinks: [
-  //     {
-  //       title: "Link 1",
-  //       subtitle: "Link 1 subtitle",
-  //       path: "/",
-  //     },
-  //   ],
-  // },
 ];
 const navLinksRight: NavLink[] = [
   {
     label: "Join Whitelisting",
     path: "/whitelisting",
-    type: "button",
+    type: "text",
     disabled: false,
   },
   {
     label: "Join Presale",
     path: "/",
-    type: "button",
-    buttonType: "shaped-disabled",
+    type: "text",
+    // buttonType: "shaped-disabled",
     disabled: true,
+  },
+  {
+    label: "Products",
+    path: "/#products",
+    type: "text",
   },
 ];
 export const Navbar = () => {
@@ -191,7 +198,7 @@ export const Navbar = () => {
                                 key={idx}
                                 href={subLink.path}
                                 target="_blank"
-                                style={{background: subLink.background}}
+                                style={{ background: subLink.background }}
                                 className={`flex flex-col flex-grow w-fit min-w-[200px] lg:min-w-[200px] xl:min-w-[250px] 2xl:min-w-[300px] rounded-[15px] px-5 pt-6 pb-2 transition duration-200 border border-[rgba(255,255,255,0.10)] hover:border-[rgba(255,255,255,0.50)]`}
                               >
                                 <h3 className="text-[15px] mb-[5px] font-semibold">
@@ -250,20 +257,36 @@ export const Navbar = () => {
                 <Hamburger />
               </button>
             </div>
-            <ul className="hidden lg:flex justify-end gap-5 items-center w-2/5">
-              {navLinksRight.map((navLink, idx) => (
-                <Button
-                  key={idx}
-                  variant={navLink.buttonType}
-                  disabled={navLink.disabled}
-                  className="font-semibold"
-                  onClick={() => {
-                    router.push(`${navLink.path}`);
-                  }}
-                >
-                  {navLink.label}
-                </Button>
-              ))}
+            <ul className="hidden lg:flex justify-end gap-3 xl:gap-5 2xl:gap-7 items-center w-2/5">
+              {navLinksRight.map((navLink, idx) =>
+                navLink.type === "button" ? (
+                  <Button
+                    key={`${navLink} ${idx}`}
+                    variant={navLink.buttonType}
+                    className="font-semibold !uppercase !text-[15px] transition-colors min-h-10 !h-fit whitespace-nowrap"
+                    disabled={
+                      navLink?.disabled && navLink.disabled ? true : false
+                    }
+                    onClick={() => {
+                      router.push(`${navLink.path}`);
+                    }}
+                  >
+                    {navLink.label}
+                  </Button>
+                ) : (
+                  <Link
+                    key={idx}
+                    href={navLink.path ? navLink.path : "/"}
+                    className={`${
+                      pathname === navLink.path
+                        ? "text-[#F2E6E0] hover:text-hoverPrimary"
+                        : ""
+                    } flex items-center text-[#F2E6E0] hover:text-hoverPrimary font-semibold transition-colors uppercase text-[15px]`}
+                  >
+                    {navLink.label}
+                  </Link>
+                )
+              )}
             </ul>
           </div>
         </div>
@@ -273,20 +296,78 @@ export const Navbar = () => {
         <div className="flex md:hidden justify-center items-center overflow-hidden z-50">
           <NavUnderlineMobile />
         </div>
-            {/* Mobile nav */}
-          <div className={`
+        {/* Mobile nav */}
+        <div
+          className={`
             lg:hidden bg-background/50 backdrop-blur-xl text-whitePrimary w-full fixed top-0 left-0 h-screen z-[999999] 
             flex flex-col items-center pt-20 transition-transform duration-300
-            ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
-          `}>
-            <button
-              onClick={toggleMobileMenu}
-              className="absolute top-8 right-4 sm:right-8 md:right-[50px] hover:scale-90 active:scale-100 transition duration-200"
-            >
-              <TimesIcon />
-            </button>
-            <ul className="flex flex-col gap-5 items-center">
-              {navLinksRight.map((navLink, idx) => (
+            ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"}
+          `}
+        >
+          <button
+            onClick={toggleMobileMenu}
+            className="absolute top-8 right-4 sm:right-8 md:right-[50px] hover:scale-90 active:scale-100 transition duration-200"
+          >
+            <TimesIcon />
+          </button>
+          <ul className="flex flex-col gap-5 items-center">
+          {navLinksLeft.map((navLink, idx) =>
+              navLink.type === "dropdown" ? (
+                <Accordion
+                  type="single"
+                  collapsible
+                  key={idx}
+                  disabled={navLink.disabled}
+                >
+                  <AccordionItem value={`item-${idx}`} className="border-b-0">
+                    <AccordionTrigger
+                      className={`hover:no-underline py-0 font-medium text-left text-[#F2E6E0] disabled:cursor-not-allowed disabled:opacity-80 uppercase flex items-center min-w-[127px]`}
+                    >
+                      {navLink.label}
+                    </AccordionTrigger>
+                    {navLink.subLinks &&
+                      navLink.subLinks.map((subLink, idx) => (
+                        <AccordionContent
+                          className="group pt-3 pb-0 text-base text-left"
+                          key={idx}
+                        >
+                          <Link
+                            href={subLink.path}
+                            target="_blank"
+                            className="text-[#F2E6E0] hover:text-hoverPrimary flex space-x-3 items-center group-hover:bg-primary-50 space-y-2"
+                          >
+                            <div
+                              style={{ background: subLink.background }}
+                              className="group-hover:bg-primary-100 w-8 h-8 flex justify-center items-center bg-white shadow-custom rounded"
+                            >
+                              {subLink.icon}
+                            </div>
+                            <div>
+                              <div className="text-base mb-1">
+                                {subLink.title}
+                              </div>
+                            </div>
+                          </Link>
+                        </AccordionContent>
+                      ))}
+                  </AccordionItem>
+                </Accordion>
+              ) : (
+                <Link
+                  key={idx}
+                  href={navLink.path ? navLink.path : "/"}
+                  className={`${
+                    pathname === navLink.path
+                      ? "text-[#F2E6E0] hover:text-hoverPrimary"
+                      : ""
+                  } flex items-center text-[#F2E6E0] hover:text-hoverPrimary font-semibold transition-colors uppercase`}
+                >
+                  {navLink.label}
+                </Link>
+              )
+            )}
+            {navLinksRight.map((navLink, idx) =>
+              navLink.type === "button" ? (
                 <Button
                   key={idx}
                   variant={navLink.buttonType}
@@ -299,45 +380,7 @@ export const Navbar = () => {
                 >
                   {navLink.label}
                 </Button>
-              ))}
-              {navLinksLeft.map((navLink, idx) =>
-                navLink.type === "dropdown" ? (
-                  <Accordion
-                type="single"
-                collapsible
-                key={idx}
-              >
-                <AccordionItem value={`item-${idx}`} className="border-b-0">
-                  <AccordionTrigger
-                    className={`hover:no-underline py-0 font-medium text-left text-[#F2E6E0] hover:text-hoverPrimary uppercase flex items-center min-w-[127px]`}
-                  >
-                    {navLink.label}
-                  </AccordionTrigger>
-                    {navLink.subLinks &&
-                      navLink.subLinks.map((subLink, idx) => (
-                        <AccordionContent
-                          className="group pt-3 pb-0 text-base text-left"
-                          key={idx}
-                        >
-                          <Link
-                            href={subLink.path}
-                            target="_blank"
-                            className="text-[#F2E6E0] hover:text-hoverPrimary flex space-x-3 items-center group-hover:bg-primary-50 space-y-2"
-                          >
-                            <div style={{background: subLink.background}} className="group-hover:bg-primary-100 w-8 h-8 flex justify-center items-center bg-white shadow-custom rounded">
-                              {subLink.icon}
-                            </div>
-                            <div>
-                              <div className="text-base mb-1">
-                                {subLink.title}
-                              </div>
-                            </div>
-                          </Link>
-                        </AccordionContent>
-                      ))}
-                </AccordionItem>
-              </Accordion>
-                ) : (
+              ) : (
                 <Link
                   key={idx}
                   href={navLink.path ? navLink.path : "/"}
@@ -349,9 +392,10 @@ export const Navbar = () => {
                 >
                   {navLink.label}
                 </Link>
-              ))}
-            </ul>
-          </div>
+              )
+            )}
+          </ul>
+        </div>
       </nav>
     </>
   );
