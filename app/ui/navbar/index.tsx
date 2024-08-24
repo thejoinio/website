@@ -124,7 +124,7 @@ const navLinksLeft: NavLink[] = [
     disabled: true,
     subLinks: [
       {
-        title: "Partner 1",
+        title: "Coming Soon",
         path: "/",
         background:
           "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(14, 127, 184, 0.40) 85.38%)",
@@ -201,12 +201,21 @@ export const Navbar = () => {
                                 style={{ background: subLink.background }}
                                 className={`flex flex-col flex-grow w-fit min-w-[200px] lg:min-w-[200px] xl:min-w-[250px] 2xl:min-w-[300px] rounded-[15px] px-5 pt-6 pb-2 transition duration-200 border border-[rgba(255,255,255,0.10)] hover:border-[rgba(255,255,255,0.50)]`}
                               >
-                                <h3 className="text-[15px] mb-[5px] font-semibold">
+                                <h3
+                                  style={
+                                    subLink.title === "Coming Soon"
+                                      ? { marginBottom: 12 }
+                                      : undefined
+                                  }
+                                  className="text-[15px] mb-[5px] font-semibold"
+                                >
                                   {subLink.title}
                                 </h3>
-                                <p className="text-xs">
-                                  Join our community on {subLink.title}
-                                </p>
+                                {subLink.title !== "Coming Soon" && (
+                                  <p className="text-xs">
+                                    Join our community on {subLink.title}
+                                  </p>
+                                )}
                                 {subLink.icon}
                               </NavigationMenuLink>
                             ))}
@@ -311,7 +320,7 @@ export const Navbar = () => {
             <TimesIcon />
           </button>
           <ul className="flex flex-col gap-5 items-center">
-          {navLinksLeft.map((navLink, idx) =>
+            {navLinksLeft.map((navLink, idx) =>
               navLink.type === "dropdown" ? (
                 <Accordion
                   type="single"
