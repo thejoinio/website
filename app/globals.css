@@ -13,6 +13,16 @@ img {
   -o-user-drag: none;      /* Older versions of Opera */
 }
 
+/* Hide the play control button on the video element */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+/* Optionally, hide all controls */
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
 /* .border-gradient {
   box-sizing: content-box;
   border-width: 1.457px;

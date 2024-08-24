@@ -43,7 +43,7 @@ export const Ecosystem: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"joint" | "joinda">("joinda");
   return (
     <VideoBackground as="section">
-      <div className="w-[calc(100%_-_32px)] sm:w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto flex flex-col items-center pt-2 lg:pt-20">
+      <div id="products" className="w-[calc(100%_-_32px)] sm:w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto flex flex-col items-center pt-2 lg:pt-20">
         <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold inline-flex items-center mt-[45px] mb-16 lg:mb-6">
           The{" "}
           <JoinEcoTokenSm className="inline-flex md:hidden mx-2 translate-y-0.5 sm:translate-y-1 w-[100px] sm:w-full" />{" "}

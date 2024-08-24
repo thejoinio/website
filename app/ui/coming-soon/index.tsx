@@ -1,7 +1,7 @@
+'use client'
 import { JoinIcon } from "@/app/assets/svg";
 import React from "react";
 import { Button } from "../button";
-import Link from "next/link";
 
 const ComingSoon = () => {
   return (
@@ -14,9 +14,15 @@ const ComingSoon = () => {
         <p className="mt-4 text-whitePrimary text-lg text-center">
           We&apos;re cooking something for your delight. <br /> While we cook, you can proceed to joining our Community!
         </p>
-        <Link href={"/"}>
-          <Button variant="shaped-white">Go Back Home</Button>
-        </Link>
+        <Button
+          variant="shaped-white"
+          className="scale-125 hover:!scale-[1.2]"
+          onClick={() => {
+            window.open('https://t.me/JoinAllinOneEco', '_blank', 'noopener,noreferrer');
+          }}
+        >
+          Join Community{" "}
+        </Button>
       </div>
     </div>
   );

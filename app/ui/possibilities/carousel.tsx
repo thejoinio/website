@@ -12,44 +12,6 @@ import rewards from "@/app/assets/images/possibilities/rewards.webp";
 import funds from "@/app/assets/images/possibilities/funds.webp";
 import nft from "@/app/assets/images/possibilities/nft.webp";
 
-const responsive1 = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 2000 },
-    items: 4,
-    slidesToSlide: 2,
-    partialVisibilityGutter: 50,
-  },
-  largeDesktop: {
-    breakpoint: { max: 2000, min: 1408 },
-    items: 3,
-    slidesToSlide: 2,
-    partialVisibilityGutter: 50,
-  },
-  desktop: {
-    breakpoint: { max: 1408, min: 1400 },
-    items: 3,
-    slidesToSlide: 1,
-    partialVisibilityGutter: 50,
-  },
-  laptop: {
-    breakpoint: { max: 1400, min: 1024 },
-    items: 2,
-    slidesToSlide: 1,
-    partialVisibilityGutter: 20,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 352 },
-    items: 1,
-    slidesToSlide: 1,
-    partialVisibilityGutter: 5,
-  },
-  mobile: {
-    breakpoint: { max: 352, min: 0 },
-    items: 1,
-    slidesToSlide: 1,
-    // partialVisibilityGutter: 5
-  },
-};
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 1600 },
@@ -98,6 +60,7 @@ export const PossibilitiesCarousel: React.FC = () => {
     centerMode: false,
     partialVisible: true,
   });
+
   useEffect(() => {
     const updateSettings = () => {
       const width = window.innerWidth || 704;
@@ -120,6 +83,7 @@ export const PossibilitiesCarousel: React.FC = () => {
       window.removeEventListener("resize", updateSettings);
     };
   }, []);
+
   return (
     <Carousel
       swipeable={true}
@@ -128,11 +92,11 @@ export const PossibilitiesCarousel: React.FC = () => {
       responsive={responsive}
       {...settings}
       ssr={false}
-      infinite={false}
-      autoPlay={false}
-      autoPlaySpeed={1000}
+      infinite={true}
+      autoPlay={true}
+      autoPlaySpeed={4000}
       keyBoardControl={true}
-      transitionDuration={500}
+      transitionDuration={1000}
       containerClass="carousel-container"
       removeArrowOnDeviceType={[
         "superLargeDesktop",
@@ -140,7 +104,7 @@ export const PossibilitiesCarousel: React.FC = () => {
         "desktop",
         "laptop",
         "tablet",
-        // "mobile",
+        "mobile",
       ]}
       itemClass="carousel-item-padding-40-px"
       className="py-6 h-fit min-h-[522px] pl-0 px-8"
