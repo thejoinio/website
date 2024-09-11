@@ -36,7 +36,7 @@ export const Button: React.FC<ButtonProps> = ({
     shaped:
       "bg-transparent hover:scale-95 active:scale-100 transition duration-200 h-10",
     "shaped-disabled":
-      "bg-transparent text-[rgba(102,102,102,0.80)] cursor-not-allowed h-10 min-w-[170px]",
+      "bg-transparent text-[rgba(102,102,102,0.80)] cursor-not-allowed h-10 min-w-[140px]",
     "shaped-enabled":
       "h-10",
     "shaped-gradient":
