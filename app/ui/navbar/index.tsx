@@ -140,6 +140,11 @@ const navLinksLeft: NavLink[] = [
 ];
 const navLinksRight: NavLink[] = [
   {
+    label: "Products",
+    path: "/#products",
+    type: "text",
+  },
+  {
     label: "Join Whitelisting",
     path: "/whitelisting",
     type: "text",
@@ -148,14 +153,9 @@ const navLinksRight: NavLink[] = [
   {
     label: "Join Presale",
     path: "/",
-    type: "text",
-    // buttonType: "shaped-disabled",
+    type: "button",
+    buttonType: "shaped-disabled",
     disabled: true,
-  },
-  {
-    label: "Products",
-    path: "/#products",
-    type: "text",
   },
 ];
 export const Navbar = () => {
