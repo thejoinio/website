@@ -6,11 +6,12 @@
   scroll-behavior: smooth;
   scrollbar-width: 4px;
 }
+
 img {
   -webkit-user-drag: none; /* Chrome, Safari, newer versions of Opera */
-  -moz-user-drag: none;    /* Firefox */
-  -ms-user-drag: none;     /* Internet Explorer and Edge */
-  -o-user-drag: none;      /* Older versions of Opera */
+  -moz-user-drag: none; /* Firefox */
+  -ms-user-drag: none; /* Internet Explorer and Edge */
+  -o-user-drag: none; /* Older versions of Opera */
 }
 
 /* Hide the play control button on the video element */
@@ -212,3 +213,8 @@ border: 2px solid red
   div .modal-token-bg {
     background: linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(14, 127, 184, 0.40) 85.38%);
   };
+
+  /* Whitepaper */
+  div.whitepaper img {
+    pointer-events: none;
+  }
