@@ -1,3 +1,5 @@
+'use client';
+import { useState } from 'react';
 import Image from 'next/image'
 import page1 from "@/app/assets/whitepaper/A4 - 1.png";
 import page2 from "@/app/assets/whitepaper/A4 - 2.png";
@@ -14,24 +16,34 @@ import page12 from "@/app/assets/whitepaper/A4 - 12.png";
 import page13 from "@/app/assets/whitepaper/A4 - 13.png";
 import page14 from "@/app/assets/whitepaper/A4 - 14.png";
 
+const pages = [page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11, page12, page13, page14];
+
 export const PDFImages = () => {
+  const [zoomLevel, setZoomLevel] = useState(100);
+
+  const handleZoomIn = () => {
+    if(zoomLevel < 100){
+      setZoomLevel(zoomLevel + 10);
+    }
+  };
+
+  const handleZoomOut = () => {
+    if (zoomLevel > 50) {
+      setZoomLevel(zoomLevel - 10);
+    }
+  };
+
   return (
-    <section className="w-[calc(100%_-_32px)] sm:w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto flex border-b">
-      <div className='whitepaper h-full flex flex-col items-center gap-4 mt-16 mb-16'>
-        <Image className='mx-auto' src={page1} width={1785} height={2526} alt='Whitepaper page 1' />
-        <Image className='mx-auto' src={page2} width={1785} height={2526} alt='Whitepaper page 2' />
-        <Image className='mx-auto' src={page3} width={1785} height={2526} alt='Whitepaper page 3' />
-        <Image className='mx-auto' src={page4} width={1785} height={2526} alt='Whitepaper page 4' />
-        <Image className='mx-auto' src={page5} width={1785} height={2526} alt='Whitepaper page 5' />
-        <Image className='mx-auto' src={page6} width={1785} height={2526} alt='Whitepaper page 6' />
-        <Image className='mx-auto' src={page7} width={1785} height={2526} alt='Whitepaper page 7' />
-        <Image className='mx-auto' src={page8} width={1785} height={2526} alt='Whitepaper page 8' />
-        <Image className='mx-auto' src={page9} width={1785} height={2526} alt='Whitepaper page 9' />
-        <Image className='mx-auto' src={page10} width={1785} height={2526} alt='Whitepaper page 10' />
-        <Image className='mx-auto' src={page11} width={1785} height={2526} alt='Whitepaper page 11' />
-        <Image className='mx-auto' src={page12} width={1785} height={2526} alt='Whitepaper page 12' />
-        <Image className='mx-auto' src={page13} width={1785} height={2526} alt='Whitepaper page 13' />
-        <Image className='mx-auto' src={page14} width={1785} height={2526} alt='Whitepaper page 14' />
+    <section className="relative w-[calc(100%_-_32px)] sm:w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto flex flex-col border-b">
+      <div className="fixed bottom-5 right-5 gap-2 flex justify-center items-center mb-4">
+        <button onClick={handleZoomIn} disabled={zoomLevel === 100} className="disabled:opacity-50 disabled:cursor-not-allowed px-3 py-1 border rounded-lg">+</button>
+        <div className='w-8 text-sm text-center mx-auto'>{zoomLevel}%</div>
+        <button onClick={handleZoomOut} disabled={zoomLevel === 50} className="disabled:opacity-50 disabled:cursor-not-allowed px-3 py-1 border rounded-lg">-</button>
+      </div>
+      <div style={{ width: `${zoomLevel}%`, transition: 'transform 0.3s ease' }} className='whitepaper h-full flex flex-col items-center gap-4 mt-10 mb-16 mx-auto'>
+        {pages.map((page, idx)=> (
+          <Image key={idx} className='mx-auto' src={page} width={1785} placeholder='blur' height={2526} alt={`Whitepaper page ${idx}`} />
+        ))}
       </div>
     </section>
   );
