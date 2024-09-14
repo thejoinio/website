@@ -15,8 +15,9 @@ import page11 from "@/app/assets/whitepaper/A4 - 11.png";
 import page12 from "@/app/assets/whitepaper/A4 - 12.png";
 import page13 from "@/app/assets/whitepaper/A4 - 13.png";
 import page14 from "@/app/assets/whitepaper/A4 - 14.png";
+import page15 from "@/app/assets/whitepaper/A4 - 15.png";
 
-const pages = [page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11, page12, page13, page14];
+const pages = [page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11, page12, page13, page14, page15];
 
 export const PDFImages = () => {
   const [zoomLevel, setZoomLevel] = useState(100);
