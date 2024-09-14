@@ -78,7 +78,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
         <TimerDots />
       </div>
       <div className="silver-text-gradient">
-        <h4 className="text-3xl md:text-[37.458px] mb-0.5">{seconds}</h4>
+        <h4 className="text-3xl md:text-[37.458px] mb-0.5 min-w-[38px] md:min-w-[48px]">{seconds}</h4>
         <p className="text-xs md:text-[13.378px] text-center">Secs</p>
       </div>
     </div>
