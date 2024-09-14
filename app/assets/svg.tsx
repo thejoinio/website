@@ -1626,3 +1626,34 @@ export const TickCircle = (props: any) => {
     </svg>
   );
 };
+
+export const ChevronDown: React.FC<{ isActive: boolean }> = ({ isActive }) => {
+  return (
+    <svg
+      className={`${
+        isActive
+          ? "rotate-180 transition duration-200"
+          : "transition duration-200"
+      }`}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M5.88086 9.06958L11.7418 14.9305L17.6027 9.06958"
+        fill="#788190"
+      />
+      <path
+        d="M5.88086 9.06958L11.7418 14.9305L17.6027 9.06958"
+        stroke="#788190"
+        strokeWidth="1.46523"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
