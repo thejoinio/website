@@ -141,7 +141,7 @@ const navLinksLeft: NavLink[] = [
 const navLinksRight: NavLink[] = [
   {
     label: "Products",
-    path: "/#products",
+    path: "/products",
     type: "text",
   },
   {
