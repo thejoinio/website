@@ -748,7 +748,7 @@ export const LoadingIndicator = (props: any) => {
   return (
     <svg
       {...props}
-      className="m-auto h-7 w-7 animate-spin"
+      className="m-auto h-5 w-5 md:h-7 md:w-7 animate-spin"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

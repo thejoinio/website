@@ -164,28 +164,6 @@ const mission2Data: MissionData[] = [
 ];
 
 
-const TestBtn = () => {
-  return (
-    <button className="relative inline-flex items-center justify-center whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 bg-[#F2E6E0] hover:scale-95 mx-[12px] h-9 px-2 text-lg font-bold text-dark w-[140px]">
-      <svg
-        viewBox="0 0 15 45"
-        fill="none"
-        className="inline-flex absolute left-[-11px] text-primary-foreground fill-[#F2E6E0] h-9"
-      >
-        <path d="M15 0H12.6085C11.4514 0 10.3974 0.665477 9.89991 1.7102L0.614192 21.2102C0.225634 22.0262 0.225634 22.9738 0.614191 23.7898L9.8999 43.2898C10.3974 44.3345 11.4514 45 12.6085 45H15V0Z"></path>
-      </svg>
-      <span className="mt-1">START</span>
-      <svg
-        viewBox="0 0 15 45"
-        fill="none"
-        className="inline-flex absolute right-[-11px] text-primary-foreground fill-[#F2E6E0] h-9"
-      >
-        <path d="M0 0H2.39151C3.54864 0 4.60261 0.665477 5.10009 1.7102L14.3858 21.2102C14.7744 22.0262 14.7744 22.9738 14.3858 23.7898L5.1001 43.2898C4.60261 44.3345 3.54864 45 2.39151 45H0V0Z"></path>
-      </svg>
-    </button>
-  );
-};
-
 export const checkAllMissionsCompleted = (
   validatedMissions: Record<string, boolean>,
 ) => {
