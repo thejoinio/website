@@ -95,7 +95,7 @@ button .border-gradient {
 }
 .join-presale-heading {
   background: linear-gradient(90deg, #C8C8C8 4.29%, #878787 97.5%);
-background-clip: text;
+  background-clip: text;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 text-fill-color: transparent;
