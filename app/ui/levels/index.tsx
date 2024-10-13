@@ -62,7 +62,7 @@ export const Levels = () => {
 
     try {
       const response = await fetch(
-        "http://teapot.thejoin.io/helper/submit-email/",
+        "https://teapot.thejoin.io/helper/submit-email/",
         {
           method: "POST",
           headers: {
