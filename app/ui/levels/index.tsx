@@ -65,6 +65,7 @@ export const Levels = () => {
         "https://teapot.thejoin.io/helper/submit-email/",
         {
           method: "POST",
+          mode: "no-cors",
           headers: {
             "Content-Type": "application/json",
           },
