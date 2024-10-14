@@ -17,7 +17,8 @@ export const Levels = () => {
   const { toast } = useToast();
   const { push } = useRouter();
   const [email, setEmail] = useState("");
-  const [country, setCountry] = useState('')
+  const [country, setCountry] = useState('');
+  const [discordUsername, setDiscordUsername] = useState("");
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
@@ -36,6 +37,14 @@ export const Levels = () => {
         title: "❎ No email entered",
         description: "Please enter your email address.",
         duration: 3000,
+      });
+      return;
+    }
+    if (!discordUsername) {
+      setStatus("idle");
+      toast({
+        title: "❎ Invalid username",
+        description: "Please enter a valid discord username.",
       });
       return;
     }
@@ -65,11 +74,10 @@ export const Levels = () => {
         "https://teapot.thejoin.io/helper/submit-email/",
         {
           method: "POST",
-          mode: "no-cors",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ address: email, country: selectedCountry.key, campaign: "level1" }),
+          body: JSON.stringify({ address: email, country: selectedCountry.key, discord_username: discordUsername, campaign: "level1" }),
         },
       );
 
@@ -158,6 +166,17 @@ export const Levels = () => {
                 onSubmit={handleSubmit}
                 className="py-3 sm:py-4 px-3 sm:px-4 flex flex-col items-center justify-center w-full rounded-[20px] mt-4 gap-y-8"
               >
+                <div className="flex flex-col w-[95%] sm:w-[90%] max-w-[548px] mx-auto">
+                  <label htmlFor="username" className="text-lg md:text-xl mb-2">Discord Username<span className="text-red-500">*</span></label>
+                  <input
+                    type="text"
+                    id="username"
+                    value={discordUsername}
+                    onChange={(e) => setDiscordUsername(e.target.value)}
+                    placeholder="Enter your discord username"
+                    className="bg-transparent h-12 py-1 sm:py-3 rounded-xl border outline-none text-white placeholder:!text-white autofill:bg-transparent [-webkit-autofill:focus]:bg-transparent autofill:text-white [-webkit-autofill:focus]:text-white font-medium text-sm sm:text-2xl px-2 sm:px-4 w-full"
+                  />
+                </div>
                 <div className="flex flex-col w-[95%] sm:w-[90%] max-w-[548px] mx-auto">
                   <label htmlFor="email" className="text-lg md:text-xl mb-2">Email Address<span className="text-red-500">*</span></label>
                   <input
