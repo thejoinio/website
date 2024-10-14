@@ -77,7 +77,7 @@ export const Levels = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ address: email, country: selectedCountry.key, discord_username: discordUsername, campaign: "level1" }),
+          body: JSON.stringify({ address: email, country: selectedCountry.key, discord_username: discordUsername, campaign: "level2" }),
         },
       );
 
