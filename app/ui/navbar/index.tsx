@@ -70,7 +70,7 @@ const navLinksLeft: NavLink[] = [
       },
       {
         title: "Discord",
-        path: "",
+        path: "https://discord.gg/joineco",
         background:
           "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(135, 164, 213, 0.40) 85.38%)",
         icon: (

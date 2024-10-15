@@ -17,7 +17,7 @@ export const Footer = () => {
     },
     {
       title: "Discord",
-      url: "",
+      url: "https://discord.gg/joineco",
       icon: <DiscordIcon />,
     },
     {

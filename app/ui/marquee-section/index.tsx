@@ -22,7 +22,7 @@ export const MarqueeSection = () => {
           variant="shaped-white"
           className="scale-125 hover:!scale-[1.2]"
           onClick={() => {
-            window.open('', '_blank', 'noopener,noreferrer');
+            window.open('https://t.me/JoinAllinOneEco', '_blank', 'noopener,noreferrer');
           }}
         >
           Join Community{" "}

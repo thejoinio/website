@@ -49,7 +49,7 @@ const mission1Data: MissionData[] = [
     id: 2,
     platform: { name: "Discord", textColor: "text-[#5865F2]" },
     icon: <DiscordPrimary />,
-    link: "",
+    link: "https://discord.gg/joineco",
     description: "Follow JOIN ecosystem",
     boldParts: ["JOIN"],
     handle: "thejoin",
