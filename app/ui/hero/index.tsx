@@ -39,7 +39,7 @@ export const Hero = () => {
           and Earn Every Step of the Way with Blockchain-Powered Security and
           Innovation!
         </p>
-        <Countdown targetDate="2024-11-01T00:00:00" />
+        <Countdown targetDate="2024-11-02T00:00:00" />
         <Button
           variant="shaped-gradient-outline"
           onClick={() => push("/whitelisting")}
