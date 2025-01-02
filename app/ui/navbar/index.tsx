@@ -133,9 +133,19 @@ const navLinksLeft: NavLink[] = [
   },
   {
     label: "Whitepaper",
-    path: "/whitepaper",
-    type: "text",
+    // path: "/whitepaper",
+    // type: "text",
     // buttonType: "text",
+    type: "dropdown",
+    disabled: true,
+    subLinks: [
+      {
+        title: "Coming Soon",
+        path: "/",
+        background:
+          "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(14, 127, 184, 0.40) 85.38%)",
+      },
+    ],
   },
 ];
 const navLinksRight: NavLink[] = [
