@@ -1,0 +1,51 @@
+'use client'
+import { CircledMinus, CircledPlus } from "@/assets/svg";
+import React, { useState } from "react";
+
+interface FAQProps {
+  idx: number;
+  title: string;
+  content: string;
+}
+export const FAQ: React.FC<FAQProps> = ({ idx, title, content }) => {
+  const [isActive, setIsActive] = useState(false);
+
+  return (
+    <div className={`mx-auto mb-[15px] flex w-full max-w-[60.625rem] flex-col transition duration-[850ms] bg-[#111C23] border-l-2 ${isActive ? "border-[#7F5CE2]": 'border-transparent'}`}>
+      <div
+        onClick={() => {
+          setIsActive(!isActive);
+        }}
+        className="cursor-pointer mb-[20px] grid grid-cols-12 gap-10 p-[26px] pb-0"
+      >
+        <div className="text-xl/[30px] font-medium self-center">{(idx + 1).toString().padStart(2, '0')}.</div>
+        <p className="text-xl/[30px] font-medium col-span-10 self-center">
+          {title}
+        </p>
+        <button
+          onClick={() => {
+            setIsActive(!isActive);
+          }}
+          className="flex w-12 justify-end transition duration-500"
+          aria-label="toggle button"
+        >
+          {isActive ? <CircledMinus /> : <CircledPlus />}
+        </button>
+      </div>
+      <div
+        className={`${
+          !isActive
+            ? "transition-all duration-[850ms] grid-rows-[0fr] opacity-0"
+            : "transition-all duration-[850ms] grid-rows-[1fr] opacity-100 pb-[26px]"
+        } overflow-hidden grid grid-cols-12`}
+      >
+        <p
+          aria-hidden={isActive}
+          className={`text-[17px]/[30px] text-[#8C8C8C] overflow-hidden col-span-10 col-start-2 px-[26px]`}
+        >
+          {content}
+        </p>
+      </div>
+    </div>
+  );
+};

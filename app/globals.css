@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.decorated-text {
+    background: var(--Linear-2, linear-gradient(98deg, #8AE5CF 6.1%, #7C3AE7 103.66%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 8.027px #6F53B8;
+}
+.text-background {
+    opacity: 0.15;
+    background: linear-gradient(180deg, #777E90 -4.18%, rgba(119, 126, 144, 0.00) 88.44%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: clamp(450px, 4vw, 560px) !important;
+}
+
+.silver-text {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0.26) 60.33%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-border-button {
+   position: relative;
+}
+
+.gradient-border-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50px; 
+    padding: 2px; 
+    background: linear-gradient(98deg, #8AE5CF 6.1%, #7C3AE7); 
+    mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude; 
+  }
+  .footer-pattern {
+    position: relative;
+    overflow: hidden;
+  }
+  .footer-pattern::before {
+    position: absolute;
+    content: "";
+    width: 408px;
+    height: 408px;
+    flex-shrink: 0;
+    left: -78px;
+    bottom: 64px;
+    border-radius: 408px;
+    background: rgba(137, 64, 255, 0.50);
+    filter: blur(175px);
+    z-index: -1;
+  }
+  .footer-pattern::after {
+    position: absolute;
+    content: "";
+    width: 356px;
+    height: 356px;
+    flex-shrink: 0;
+    bottom: -89px;
+    right: -20px;
+    border-radius: 356px;
+    background: rgba(137, 64, 255, 0.50);
+    filter: blur(175px);
+    z-index: -1;
+  }
+
+  .footer-text {
+    -webkit-text-stroke-width: 0.6654835939407349px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.20);
+    -webkit-text-fill-color: transparent;
+    font-size: clamp(450px, 4vw, 532px) !important;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    line-height: 1;
+    z-index: -1;
+  }
+  .copyright-join {
+    background: var(--Linear-2, linear-gradient(98deg, #8AE5CF 6.1%, #7C3AE7 103.66%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.28px;
+  }
