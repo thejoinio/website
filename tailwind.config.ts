@@ -12,11 +12,27 @@ export default {
         
       },
       backgroundImage: {
+        mainBg: 'url(@/assets/images/main-bg.svg)',
+        mainBgMobile: 'url(@/assets/images/main-bg-mobile.svg)',
         token: "url(@/assets/icons/join-token.webp)",
-        possibilitiesVector: "url(@/assets/vectors/possibilities1.png)",
-        possibilitiesVector2: "url(@/assets/vectors/possibilities2.png)",
+        possibilitiesMobile: "url(@/assets/vectors/possibilities-mobile1.svg)",
+        possibilitiesDekstop: "url(@/assets/vectors/possibilities-desktop.svg)",
         globe: "url(@/assets/images/globe-background.webp)",
         presaleSectionBg: "url(@/assets/images/presale-section-bg.png)",
+        gradientOpaque: "linear-gradient(98deg, #8AE5CF 6.1%, #7C3AE7 103.66%)",
+        event2BgSm: "url(@/assets/images/event-2-small-bg.png)",
+        event2: "url(@/assets/images/event-2.png)",
+        event3: "url(@/assets/images/event-3.png)",
+        event5: "url(@/assets/images/event-5.png)",
+        event7: "url(@/assets/images/event-7.png)",
+        ogBg: "url(@/assets/images/og-bg.svg)",
+        communityLooper: "url(@/assets/vectors/looper.svg)",
+      },
+      backgroundSize: {
+        full: "100%"
+      },
+      screens: {
+        xs: '480px'
       },
       keyframes: {
         "accordion-down": {

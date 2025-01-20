@@ -48,11 +48,11 @@ export default function FAQSSection () {
   return (
     <section
       id="faqs"
-      className="w-[calc(100%_-_32px)] sm:w-[calc(100%_-_64px)] md:w-[calc(100%_-_100px)] xl:w-[calc(100%_-_160px)] max-w-8xl mx-auto pt-10 md:pt-20 pb-[4.375rem] md:pb-0"
+      className="faqs-section relative pb-[4.375rem] md:pb-[50px] overflow-hidden"
     >
-      <div className="flex flex-col gap-4">
+      <div className="faqs relative flex flex-col gap-4 w-full max-w-[1440px] px-5 md:px-10 lg:px-20 mx-auto">
         <div className="w-full mx-auto text-center">
-          <h2 className="w-fit text-center mx-auto font-medium flex items-center mb-[30px] mt-16 text-5xl">
+          <h2 className="w-fit text-center mx-auto font-medium flex items-center mb-5 xs:mb-[30px] mt-16 text-2xl/normal xs:text-5xl">
             Frequently Asked Questions
           </h2>
         </div>

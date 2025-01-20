@@ -16,17 +16,17 @@ export const FAQ: React.FC<FAQProps> = ({ idx, title, content }) => {
         onClick={() => {
           setIsActive(!isActive);
         }}
-        className="cursor-pointer mb-[20px] grid grid-cols-12 gap-10 p-[26px] pb-0"
+        className="cursor-pointer mb-[20px] grid grid-cols-12 gap-4 md:gap-10 px-2.5 p-[26px] pb-0 z-20"
       >
-        <div className="text-xl/[30px] font-medium self-center">{(idx + 1).toString().padStart(2, '0')}.</div>
-        <p className="text-xl/[30px] font-medium col-span-10 self-center">
+        <div className="hidden xs:block text-base md:text-xl/[30px] font-medium self-center">{(idx + 1).toString().padStart(2, '0')}.</div>
+        <p className="flex text-base md:text-xl/[30px] font-medium col-span-11 xs:col-span-10 self-center pl-3 pr-3 xs:pr-0">
           {title}
         </p>
         <button
           onClick={() => {
             setIsActive(!isActive);
           }}
-          className="flex w-12 justify-end transition duration-500"
+          className="flex w-7 md:w-12 justify-end transition duration-500 md:col-span-1 justify-self-end z-20"
           aria-label="toggle button"
         >
           {isActive ? <CircledMinus /> : <CircledPlus />}
