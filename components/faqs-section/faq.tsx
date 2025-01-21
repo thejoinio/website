@@ -35,9 +35,9 @@ export const FAQ: React.FC<FAQProps> = ({ idx, title, content }) => {
       <div
         className={`${
           !isActive
-            ? "transition-all duration-[850ms] grid-rows-[0fr] opacity-0"
-            : "transition-all duration-[850ms] grid-rows-[1fr] opacity-100 pb-[26px]"
-        } overflow-hidden grid grid-cols-12`}
+            ? "transition-all grid-rows-[0fr] opacity-0"
+            : "transition-all grid-rows-[1fr] opacity-100 pb-[26px]"
+        } overflow-hidden grid grid-cols-12 duration-[850ms]`}
       >
         <p
           aria-hidden={isActive}

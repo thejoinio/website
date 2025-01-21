@@ -35,7 +35,7 @@
   animation: rotate-gradient 5s linear infinite;
 }
 
-.gradient-border-button::before, .gradient-border-div::before {
+.gradient-border-button::before, .gradient-border-div::before, .gradient-border-mission::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -51,6 +51,9 @@
     -webkit-mask-composite: xor;
             mask-composite: exclude; 
     z-index: -1;
+  }
+  .gradient-border-button.self-disabled::before {
+    border-radius: 8px;
   }
 
   @keyframes rotate-gradient {
@@ -192,11 +195,6 @@
     bottom: -100px;
   }
 
-  /* .beta-testing {
-    fill: var(--Linear-2, linear-gradient(98deg, #8AE5CF 6.1%, #7C3AE7 103.66%));
-opacity: 0.1;
-  } */
-
   .faqs-section::before {
     top: 30px;
     left: 278px;
@@ -240,7 +238,13 @@ opacity: 0.1;
     filter: blur(175px);
     z-index: -1;
   }
-
+  .clipped-text, .footer-text {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #555;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  
   .footer-text {
     -webkit-text-stroke-width: 0.6654835939407349px;
     -webkit-text-stroke-color: rgba(255, 255, 255, 0.20);
@@ -263,3 +267,8 @@ opacity: 0.1;
     line-height: normal;
     letter-spacing: -0.28px;
   }
+  @layer base {
+  :root {
+        --radius: 0.5rem;
+    }
+}

@@ -83,7 +83,7 @@ export default function Possibilities() {
             <div className="relative uppercase w-fit flex-shrink-0 flex items-center gap-2 md:gap-[18px] text-[#FFFFFF]/60 leading-4 font-semibold px-8 md:px-16 pt-[10px] pb-6 text-sm xs:text-base"> <div className="absolute -left-px top-6 rounded-t-0 rounded-b-3xl border-x border-b border-[#4c4c4c] h-6 w-[calc(100%_+_2px)] shadow-[0px_12px_0px_8px_#0C0C0C]"></div> <div className="rounded-full w-2 h-2 bg-[#999]"></div>What we do</div>
           <div className="w-full rounded-tl-[24px] rounded-tr-[32px] bg-[#04141D] border border-b-0 border-[#4C4C4C]"></div>
       </div>
-      <section className="flex flex-col md:px-[18px] relative max-w-[1440px] mx-auto">
+      <section className="flex flex-col md:px-[18px] relative max-w-[1440px] mx-auto overflow-hidden">
         <div className="flex flex-col gap-[45px] pt-16 xs:pt-32 border-x border-[#4C4C4C]">
           <div className="flex flex-col items-center gap-9">
               <h2 className="text-2xl xs:text-4xl/normal md:text-[48px]/normal font-medium max-w-[21ch] mx-auto text-center">

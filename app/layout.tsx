@@ -3,6 +3,8 @@ import "./globals.css";
 import { fontTSB } from "@/fonts";
 import Footer from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import JoinUs from "@/components/join-us";
+import { Toaster } from "@/components/ui/toaster";
 
 
 export const metadata: Metadata = {
@@ -53,6 +55,8 @@ export default function RootLayout({
         <>
           {children}
         </>
+        <Toaster />
+        <JoinUs />
         <Footer />
       </body>
     </html>

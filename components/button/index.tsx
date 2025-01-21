@@ -33,7 +33,7 @@ export const Button: React.FC<ButtonProps> = ({
     primary:
       "gradient-border-button text-white bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)] hover:bg-[linear-gradient(98deg,#8AE5CF_6.1%,#7C3AE7_103.66%)] outline-transparent focus:outline-black disabled:cursor-not-allowed disabled:opacity-50",
     white:
-      "gradient-border-button text-black bg-white hover:bg-[linear-gradient(98deg,#8AE5CF_6.1%,#7C3AE7_103.66%)] font-medium outline-transparent focus:outline-black disabled:cursor-not-allowed",
+      "gradient-border-button text-black bg-white hover:bg-[linear-gradient(98deg,#8AE5CF_6.1%,#7C3AE7_103.66%)] font-medium outline-transparent focus:outline-black disabled:cursor-not-allowed disabled:opacity-50",
     dark:
       "gradient-border-button text-white bg-[#121010] hover:bg-[linear-gradient(98deg,#8AE5CF_6.1%,#7C3AE7_103.66%)] font-medium outline-transparent focus:outline-black disabled:cursor-not-allowed disabled:opacity-50",
     outlined:
