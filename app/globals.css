@@ -42,14 +42,14 @@
     border-radius: 50px; 
     padding: 2px; 
     background: linear-gradient(98deg, #8AE5CF 6.1%, #7C3AE7); 
-    mask: 
-       linear-gradient(#fff 0 0) content-box, 
-       linear-gradient(#fff 0 0);
     -webkit-mask: 
        linear-gradient(#fff 0 0) content-box, 
        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-            mask-composite: exclude; 
+       mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+       -webkit-mask-composite: xor;
+               mask-composite: exclude; 
     z-index: -1;
   }
   .gradient-border-button.self-disabled::before {

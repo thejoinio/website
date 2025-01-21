@@ -303,6 +303,7 @@ export const Missions = () => {
             {missions.map((mission) => (
               <button
                 key={mission}
+                type="button"
                 className={`flex h-fit md:h-[60px] w-fit lg:w-full lg:mx-auto rounded-full border lg:border-none lg:rounded-none items-center font-medium sm:font-semibold text-sm sm:text-xl px-3 sm:px-6 md:px-10 py-2 sm:py-[14px] transition duration-200 whitespace-nowrap ${
                   activeMission === mission
                     ? "bg-[rgba(255,255,255,0.10)] border-[#02A8FB]"
@@ -327,12 +328,12 @@ export const Missions = () => {
             {missions.map((mission) => (
               <div
                 key={mission}
-                className={`transition duration-200 top-0 absolute w-[2.286px] h-[60px] rounded-[2.286px] ${
+                className={`transition duration-200 top-0 absolute w-[2.286px] h-14 rounded-[2.286px] ${
                   activeMission === mission ? "bg-[#02A8FB]" : "bg-transparent"
                 } ${
                   activeMission === "Mission 1"
                     ? "translate-y-0"
-                    : "translate-y-[68px]"
+                    : "translate-y-16"
                 }`}
               ></div>
             ))}

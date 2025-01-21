@@ -100,6 +100,7 @@ export default function Possibilities() {
               </h2>
               <p className="py-2 px-3 text-center rounded-lg border-t border-[#4C4C4C] border-b w-fit text-[#999999] text-xs xs:text-sm md:text-base font-semibold">Not just blockchains.</p>
           </div>
+          <div></div>
           <div className="relative pb-[60px]">
             <div className="absolute bg-possibilitiesMobile md:bg-possibilitiesDekstop -z-10 bg-full md:bg-cover bg-top bg-no-repeat h-[calc(100%_+_130px)] w-full -mt-[0px] md:-mt-[130px]"></div>
               <div className="relative grid grid-cols-2 md:grid-cols-3 justify-items-center md:place-items-center md:gap-14 w-full max-w-[1440px] mx-auto px-4 md:px-7 lg:px-14 mt-[115px] md:mt-0">
