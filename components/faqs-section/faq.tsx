@@ -11,7 +11,7 @@ export const FAQ: React.FC<FAQProps> = ({ idx, title, content }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className={`mx-auto mb-[15px] flex w-full max-w-[60.625rem] flex-col transition duration-[850ms] bg-[#111C23] border-l-2 ${isActive ? "border-[#7F5CE2]": 'border-transparent'}`}>
+    <div className={`mx-auto mb-[15px] flex w-full max-w-[60.625rem] flex-col transition duration-700 bg-[#111C23] border-l-2 ${isActive ? "border-[#7F5CE2]": 'border-transparent'}`}>
       <div
         onClick={() => {
           setIsActive(!isActive);
@@ -37,7 +37,7 @@ export const FAQ: React.FC<FAQProps> = ({ idx, title, content }) => {
           !isActive
             ? "transition-all grid-rows-[0fr] opacity-0"
             : "transition-all grid-rows-[1fr] opacity-100 pb-[26px]"
-        } overflow-hidden grid grid-cols-12 duration-[850ms]`}
+        } overflow-hidden grid grid-cols-12 duration-700`}
       >
         <p
           aria-hidden={isActive}
