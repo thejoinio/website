@@ -41,7 +41,7 @@ export const FAQ: React.FC<FAQProps> = ({ idx, title, content }) => {
       >
         <p
           aria-hidden={isActive}
-          className={`text-[17px]/[30px] text-[#8C8C8C] overflow-hidden col-span-10 col-start-2 px-[26px]`}
+          className={`text-[17px]/[30px] text-[#8C8C8C] overflow-hidden col-span-10 xs:col-start-2 px-[26px]`}
         >
           {content}
         </p>

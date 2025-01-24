@@ -94,13 +94,12 @@ export default function Possibilities() {
                   alt="Join Token also represents O"
                   width={200}
                   height={199}
-                  className="inline mix-blend-luminosity w-10 h-10 -mt-3 mx-1"
+                  className="inline mix-blend-luminosity w-6 h-6 xs:w-8 xs:h-8 md:w-10 md:h-10 -mt-1.5 xs:-mt-2 sm:-mt-3 mx-1"
                   />
                   IN
               </h2>
               <p className="py-2 px-3 text-center rounded-lg border-t border-[#4C4C4C] border-b w-fit text-[#999999] text-xs xs:text-sm md:text-base font-semibold">Not just blockchains.</p>
           </div>
-          <div></div>
           <div className="relative pb-[60px]">
             <div className="absolute bg-possibilitiesMobile md:bg-possibilitiesDekstop -z-10 bg-full md:bg-cover bg-top bg-no-repeat h-[calc(100%_+_130px)] w-full -mt-[0px] md:-mt-[130px]"></div>
               <div className="relative grid grid-cols-2 md:grid-cols-3 justify-items-center md:place-items-center md:gap-14 w-full max-w-[1440px] mx-auto px-4 md:px-7 lg:px-14 mt-[115px] md:mt-0">

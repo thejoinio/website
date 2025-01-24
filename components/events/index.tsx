@@ -12,7 +12,7 @@ import {
 import week5avatar from "@/assets/images/og-vr.svg";
 import week7meme from "@/assets/images/week-7-memes.png";
 import event2airdrop from "@/assets/images/event-2-airdrop.png";
-import event69 from "@/assets/images/event-6-9.png";
+import event69 from "@/assets/images/event-69.png";
 
 const JoinTokenSpeaker = () => (
   <div className="bg-white rounded-xl relative w-8 h-8">
@@ -157,7 +157,7 @@ const Event8Card = () => (
 
 const Event69Card = () => (
   <div className="relative w-full max-w-md sm:max-w-[630px] h-full min-h-[200px] mx-auto p-[35px] pb-0 px-[15px] sm:px-[35px] flex flex-col sm:flex-row justify-between gap-8 rounded-3xl bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)] overflow-hidden">
-    <div className="flex flex-col items-center sm:items-start justify-between sm:pb-[35px]">
+    <div className="flex flex-col items-center sm:items-start justify-between sm:pb-[40px]">
       <div className="flex w-full mb-4 sm:hidden">
         <UnionHead heading="Event 6 - 9" className="mx-auto" />
       </div>
@@ -168,21 +168,21 @@ const Event69Card = () => (
         </span>
       </h5>
       <ul className="pl-5 list-disc text-sm/normal gap-1 flex flex-col">
-        <li>Affiliate Feature Release</li>
-        <li>Presale + Hype Phase</li>
+        <li className="whitespace-nowrap">Affiliate Feature Release</li>
+        <li className="whitespace-nowrap">Presale + Hype Phase</li>
       </ul>
     </div>
-    <div className="flex flex-col justify-between items-center sm:items-end gap-[27px]">
+    <div className="flex flex-col justify-between items-center sm:items-end gap-4 lg:gap-[27px] min-w-[138px]">
       <div className="hidden sm:flex w-full">
         <UnionHead heading="Event 6 - 9" className="ml-auto" />
       </div>
-      <div>
+      <div className="flex">
         <Image
           src={event69}
           width={726}
           height={531}
-          alt="A twitter page screenshot"
-          className="w-full max-w-[242px]"
+          alt="A guy wearing the VR headsets"
+          className="lg:object-none lg:overflow-visible md:object-bottom object-contain"
         />
       </div>
     </div>
@@ -191,7 +191,7 @@ const Event69Card = () => (
       alt="Join Token"
       width={130}
       height={130}
-      className="mix-blend-plus-lighter absolute left-7 sm:left-1/2 -translate-x-1/2 bottom-0"
+      className="mix-blend-plus-lighter absolute left-7 sm:left-[40%] -translate-x-1/2 bottom-0"
     />
   </div>
 );
@@ -225,52 +225,6 @@ export default function Events() {
           </div>
           {/* Event 6 - 9 Card */}
           <Event69Card />
-        </div>
-      </div>
-    </section>
-  );
-}
-export function EventsOld() {
-  return (
-    <section className="events-section relative overflow-hidden">
-      <div className="events relative py-20 flex flex-col w-full max-w-[1440px] mx-auto px-4 md:px-10 lg:px-20">
-        <div className="flex flex-col-reverse items-center gap-1 font-semibold">
-          <h2 className="text-[48px] leading-[73px]">Community Events</h2>
-          <p className="leading-[26px]">Events</p>
-        </div>
-        <div className="flex flex-col lg:flex-row gap-8 mt-[56px]">
-          <div className="w-full lg:w-1/2 gap-8 flex flex-col">
-            <div className="flex flex-col sm:flex-row gap-8">
-              {/* Week 1 Card */}
-              <Event1Card />
-              {/* Week 2 Card */}
-              <Event2Card />
-            </div>
-            <div className="flex flex-col sm:flex-row gap-8">
-              {/* Week 3 Card */}
-              <Event4Card />
-              {/* Week 4 Card */}
-              <Event5Card />
-            </div>
-          </div>
-
-          <div className="w-full lg:w-1/2 flex flex-col gap-8">
-            <div className="flex flex-col sm:flex-row gap-8">
-              {/* Week 5 Card */}
-              <Event3Card />
-              {/* Week 7 Card */}
-              <div className="w-3/5 bg-event7 bg-cover rounded-3xl flex flex-col justify-center items-center">
-                <h5>Event 8</h5>
-                <div className="mt-7 mb-3">
-                  <Image src={week7meme} alt="Memes" />
-                </div>
-                <p className="text-center">Community Feature Release</p>
-              </div>
-            </div>
-            <div className="flex h-full rounded-3xl bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)]">
-              <UnionHead heading="Event 6 - 9" />
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -88,7 +88,15 @@ export default {
   				'50%': {
   					transform: 'translateY(-3%)'
   				}
-  			}
+  			},
+			  scrollLeft: {
+				from: { transform: "translateX(0%)" },
+				to: { transform: "translateX(calc(-100% - 48px))" },
+			  },
+			  scrollRight: {
+				from: { transform: "translateX(0%)" },
+				to: { transform: "translateX(calc(100% - 48px))" },
+			  },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
@@ -96,7 +104,9 @@ export default {
   			marquee: 'marquee 8s linear infinite',
   			'slide-in': 'slide-in 0.2s ease-in-out forwards',
   			'slide-out': 'slide-out 0.2s ease-in-out forwards',
-  			'bounce-hero': 'bounce-hero 3s linear infinite'
+  			'bounce-hero': 'bounce-hero 3s linear infinite',
+			'scroll-left': 'scrollLeft 20s linear infinite',
+			'scroll-right': 'scrollRight 20s linear infinite',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

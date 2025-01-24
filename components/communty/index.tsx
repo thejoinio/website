@@ -24,7 +24,7 @@ export default function Community () {
                     <p className="text-center text-base xs:text-xl/[30px]">Join the millions of creators, collectors, and curators who are on this journey with you.</p>
                 </div>
                 <div className="flex flex-col justify-center items-center gap-5 xs:gap-[30px]">
-                    <Countdown targetDate="2025-01-25T00:00:00" />
+                    <Countdown targetDate="2025-01-30T00:00:00" />
                     <Button variant="dark" className="text-xl px-[30px] py-[15px]" disabled>Join Whitelisting</Button>
                 </div>
                 <div>

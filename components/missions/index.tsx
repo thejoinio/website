@@ -4,161 +4,15 @@ import { Button } from "@/components/button";
 import {
   AppIcon,
   LoadingIndicator,
-  DiscordPrimary,
-  TelegramPrimary,
-  YouTubeIcon,
 } from "@/assets/svg";
-import Image from "next/image";
-import XIcon from "@/assets/icons/XPrimary.png";
-import IgIcon from "@/assets/icons/Instagram.png";
-import { JSX, useEffect, useState } from "react";
+
+import { useEffect, useState } from "react";
 import { Mission } from "../mission";
-import { Modal } from "../modal";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
-
-interface Platform {
-  name: string;
-  textColor: string;
-}
-
-export interface MissionData {
-  id: number;
-  platform: Platform;
-  icon: JSX.Element;
-  link: string;
-  description: string;
-  boldParts: string[];
-  handle: string;
-}
-
-const mission1Data: MissionData[] = [
-  {
-    id: 1,
-    platform: { name: "Telegram", textColor: "telegram-text-gradient" },
-    icon: <TelegramPrimary />,
-    link: "https://t.me/JoinAllinOneEco",
-    description: "Follow JOIN ecosystem",
-    boldParts: ["JOIN"],
-    handle: "JoinEco",
-  },
-  {
-    id: 2,
-    platform: { name: "Discord", textColor: "text-[#5865F2]" },
-    icon: <DiscordPrimary />,
-    link: "https://discord.gg/joineco",
-    description: "Follow JOIN ecosystem",
-    boldParts: ["JOIN"],
-    handle: "thejoin",
-  },
-  {
-    id: 3,
-    platform: { name: "X", textColor: "text-white" },
-    icon: (
-      <Image src={XIcon} alt="X Icon" width={30} height={30} className="mx-1" />
-    ),
-    link: "https://twitter.com/intent/follow?screen_name=joineco",
-    description: "Follow JOIN ecosystem",
-    boldParts: ["JOIN"],
-    handle: "joineco",
-  },
-  {
-    id: 4,
-    platform: { name: "X", textColor: "text-white" },
-    icon: (
-      <Image src={XIcon} alt="X Icon" width={30} height={30} className="mx-1" />
-    ),
-    link: "https://twitter.com/intent/follow?screen_name=cybadaddy",
-    description: "Follow Co-founder Dave",
-    boldParts: ["Co-founder"],
-    handle: "cybadaddy",
-  },
-  {
-    id: 5,
-    platform: { name: "X", textColor: "text-white" },
-    icon: (
-      <Image src={XIcon} alt="X Icon" width={30} height={30} className="mx-1" />
-    ),
-    link: "https://twitter.com/intent/follow?screen_name=leonoklyne",
-    description: "Follow Co-founder Ben",
-    boldParts: ["Co-founder"],
-    handle: "leonoklyne",
-  },
-];
-
-const mission2Data: MissionData[] = [
-  {
-    id: 6,
-    platform: { name: "X", textColor: "text-white" },
-    icon: (
-      <Image src={XIcon} alt="X Icon" width={30} height={30} className="mx-1" />
-    ),
-    link: "https://twitter.com/intent/follow?screen_name=iamvicol",
-    description: "Follow Co-founder Vico",
-    boldParts: ["Co-founder"],
-    handle: "iamvicol",
-  },
-  {
-    id: 7,
-    platform: { name: "Instagram", textColor: "text-white" },
-    icon: (
-      <Image
-        src={IgIcon}
-        alt="Instagram Icon"
-        width={30}
-        height={30}
-        className="mx-1"
-      />
-    ),
-    link: "https://instagram.com/joinecosystem",
-    description: "Follow JOIN Ecosystem",
-    boldParts: ["JOIN"],
-    handle: "joinecosystem?",
-  },
-  {
-    id: 8,
-    platform: { name: "Instagram", textColor: "text-white" },
-    icon: (
-      <Image
-        src={IgIcon}
-        alt="Instagram Icon"
-        width={30}
-        height={30}
-        className="mx-1"
-      />
-    ),
-    link: "https://instagram.com/cybadaddy",
-    description: "Follow Co-founder Dave",
-    boldParts: ["Co-founder"],
-    handle: "cybadaddy",
-  },
-  {
-    id: 9,
-    platform: { name: "Instagram", textColor: "text-white" },
-    icon: (
-      <Image
-        src={IgIcon}
-        alt="Instagram Icon"
-        width={30}
-        height={30}
-        className="mx-1"
-      />
-    ),
-    link: "https://instagram.com/leonoklyne_",
-    description: "Follow Co-founder Ben",
-    boldParts: ["Co-founder"],
-    handle: "leonoklyne_",
-  },
-  {
-    id: 10,
-    platform: { name: "YouTube", textColor: "text-white" },
-    icon: <YouTubeIcon className="mx-1" />,
-    link: "https://youtube.com/@thejoineco",
-    description: "Follow the JOIN project",
-    boldParts: ["JOIN"],
-    handle: "thejoineco",
-  },
-];
+// import { MissionModal } from "../modal/mission-modal";
+import { mission1Data, mission2Data } from "./data";
+import { Modal } from "../modal/index-old";
 
 
 export const checkAllMissionsCompleted = (
@@ -319,8 +173,8 @@ export const Missions = () => {
             <div className="relative hidden lg:flex h-full">
               <p className="absolute left-0 top-20 text-[250px] font-medium clipped-text">J</p>
               <p className="absolute right-0 top-20 text-[250px] font-medium clipped-text">O</p>
-              <p className="absolute left-0 -bottom-20 text-[250px] font-medium clipped-text">I</p>
-              <p className="absolute right-0 -bottom-20 text-[250px] font-medium clipped-text">N</p>
+              <p className="absolute left-0 top-[300px] text-[250px] font-medium clipped-text">I</p>
+              <p className="absolute right-0 top-[300px] text-[250px] font-medium clipped-text">N</p>
             </div>
           </div>
           <div className="relative hidden lg:block">
@@ -349,13 +203,21 @@ export const Missions = () => {
             ))}
             {/* Modal Component */}
             <Modal
+            isOpen={currentMissionKey !== null}
+            missionData={missionData.find(
+              (data) => `Mission-${data.id}` === currentMissionKey,
+            )}
+            onClose={() => setCurrentMissionKey(null)}
+            setAllMissionsCompleted={setAllMissionsCompleted}
+            />
+            {/* <MissionModal
               isOpen={currentMissionKey !== null}
               missionData={missionData.find(
                 (data) => `Mission-${data.id}` === currentMissionKey,
               )}
               onClose={() => setCurrentMissionKey(null)}
               setAllMissionsCompleted={setAllMissionsCompleted}
-            />
+            /> */}
 
             {activeMission === "Mission 1" ? (
               <div className="bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)] py-3 sm:py-7 px-4 sm:px-[30px] gap-3 flex flex-col xs:flex-row justify-between items-center w-full rounded-[20px] mt-24">
