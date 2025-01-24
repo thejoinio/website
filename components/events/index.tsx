@@ -156,7 +156,7 @@ const Event8Card = () => (
 );
 
 const Event69Card = () => (
-  <div className="relative w-full max-w-md sm:max-w-[630px] h-full min-h-[200px] mx-auto p-[35px] pb-0 px-[15px] sm:px-[35px] flex flex-col sm:flex-row justify-between gap-8 rounded-3xl bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)] overflow-hidden">
+  <div className="relative w-full max-w-md sm:max-w-[630px] h-full min-h-[200px] mx-auto p-[35px] pb-0 px-[15px] sm:px-[35px] flex flex-col sm:flex-row justify-between gap-4 xl:gap-8 rounded-3xl bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)] overflow-hidden">
     <div className="flex flex-col items-center sm:items-start justify-between sm:pb-[40px]">
       <div className="flex w-full mb-4 sm:hidden">
         <UnionHead heading="Event 6 - 9" className="mx-auto" />
@@ -168,8 +168,8 @@ const Event69Card = () => (
         </span>
       </h5>
       <ul className="pl-5 list-disc text-sm/normal gap-1 flex flex-col">
-        <li className="whitespace-nowrap">Affiliate Feature Release</li>
-        <li className="whitespace-nowrap">Presale + Hype Phase</li>
+        <li className="xl:whitespace-nowrap">Affiliate Feature Release</li>
+        <li className="xl:whitespace-nowrap">Presale + Hype Phase</li>
       </ul>
     </div>
     <div className="flex flex-col justify-between items-center sm:items-end gap-4 lg:gap-[27px] min-w-[138px]">
@@ -182,7 +182,7 @@ const Event69Card = () => (
           width={726}
           height={531}
           alt="A guy wearing the VR headsets"
-          className="lg:object-none lg:overflow-visible md:object-bottom object-contain"
+          className=""
         />
       </div>
     </div>
