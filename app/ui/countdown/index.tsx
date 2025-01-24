@@ -47,41 +47,44 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
   }
 
   return (
-    <div
-      className={`${inter.className} rounded-lg border border-opacity-30 w-fit md:min-w-[273px] h-fit min-h-[90px] flex shrink-0 silver-text-gradient mb-5 px-5 py-3`}
-      style={{
-        borderRadius: "13.378px",
-        border: "0.669px solid rgba(255, 255, 255, 0.30)",
-        background: "linear-gradient(144deg, #28272F 9.13%, #040404 62.89%)",
-        boxShadow: "0px 0px 8.027px 0px #6F53B8",
-      }}
-    >
-      <div className="silver-text-gradient">
-        <h4 className="text-3xl md:text-[37.458px] mb-0.5">{days}</h4>
-        <p className="text-xs md:text-[13.378px] text-center">Days</p>
+      <div className="flex flex-col gap-4 items-center">
+        <p className="text-xl sm:text-2xl md:text-3xl text-center">We are moving to our new home. Tick tock:</p>
+        <div
+          className={`${inter.className} rounded-lg border border-opacity-30 w-fit md:min-w-[273px] h-fit min-h-[90px] flex shrink-0 silver-text-gradient mb-5 px-5 py-3`}
+          style={{
+            borderRadius: "13.378px",
+            border: "0.669px solid rgba(255, 255, 255, 0.30)",
+            background: "linear-gradient(144deg, #28272F 9.13%, #040404 62.89%)",
+            boxShadow: "0px 0px 8.027px 0px #6F53B8",
+          }}
+        >
+          <div className="silver-text-gradient">
+            <h4 className="text-3xl md:text-[37.458px] mb-0.5">{days}</h4>
+            <p className="text-xs md:text-[13.378px] text-center">Days</p>
+          </div>
+          <div className="h-[36px] mx-3 md:mx-6 items-center flex">
+            <TimerDots />
+          </div>
+          <div className="silver-text-gradient">
+            <h4 className="text-3xl md:text-[37.458px] mb-0.5">{hours}</h4>
+            <p className="text-xs md:text-[13.378px] text-center">Hours</p>
+          </div>
+          <div className="h-[36px] mx-3 md:mx-6 items-center flex">
+            <TimerDots />
+          </div>
+          <div className="silver-text-gradient">
+            <h4 className="text-3xl md:text-[37.458px] mb-0.5">{minutes}</h4>
+            <p className="text-xs md:text-[13.378px] text-center">Mins</p>
+          </div>
+          <div className="h-[36px] mx-3 md:mx-6 items-center flex">
+            <TimerDots />
+          </div>
+          <div className="silver-text-gradient">
+            <h4 className="text-3xl md:text-[37.458px] mb-0.5 min-w-[38px] md:min-w-[48px]">{seconds}</h4>
+            <p className="text-xs md:text-[13.378px] text-center">Secs</p>
+          </div>
+        </div>
       </div>
-      <div className="h-[36px] mx-3 md:mx-6 items-center flex">
-        <TimerDots />
-      </div>
-      <div className="silver-text-gradient">
-        <h4 className="text-3xl md:text-[37.458px] mb-0.5">{hours}</h4>
-        <p className="text-xs md:text-[13.378px] text-center">Hours</p>
-      </div>
-      <div className="h-[36px] mx-3 md:mx-6 items-center flex">
-        <TimerDots />
-      </div>
-      <div className="silver-text-gradient">
-        <h4 className="text-3xl md:text-[37.458px] mb-0.5">{minutes}</h4>
-        <p className="text-xs md:text-[13.378px] text-center">Mins</p>
-      </div>
-      <div className="h-[36px] mx-3 md:mx-6 items-center flex">
-        <TimerDots />
-      </div>
-      <div className="silver-text-gradient">
-        <h4 className="text-3xl md:text-[37.458px] mb-0.5 min-w-[38px] md:min-w-[48px]">{seconds}</h4>
-        <p className="text-xs md:text-[13.378px] text-center">Secs</p>
-      </div>
-    </div>
   );
 };
 
