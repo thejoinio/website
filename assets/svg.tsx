@@ -528,6 +528,7 @@ export const PlusIcon = () => (
           height="64"
           fill="none"
           viewBox="0 0 193 64"
+          aria-label="JOIN Silver Gradient Logo"
         >
           <path
             fill="#121010"

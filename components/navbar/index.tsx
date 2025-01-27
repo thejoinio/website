@@ -11,6 +11,7 @@ import JoinTelegram from "@/assets/community/telegram.webp";
 import JoinDiscord from "@/assets/community/discord.webp";
 import JoinLinkedIn from "@/assets/community/linkedin.webp";
 import JoinTwitter from "@/assets/community/x.webp";
+import { useModal } from "@/contexts/modal-context";
 
 export interface INavLink {
   label: string;
@@ -28,6 +29,7 @@ export interface INavLink {
 
 export const Navbar = () => {
   const [isNavOpened, setIsNavOpened] = useState(false);
+  const {openModal} = useModal()
 
   const navLinks: INavLink[] = [
     {
@@ -146,7 +148,7 @@ export const Navbar = () => {
           )}
         </ul>
         <div className="hidden md:flex">
-          <Button variant="dark" disabled>
+          <Button variant="dark" disabled onClick={openModal}>
             Join Presale
           </Button>
         </div>

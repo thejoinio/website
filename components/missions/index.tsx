@@ -1,22 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { Button } from "@/components/button";
-import {
-  AppIcon,
-  LoadingIndicator,
-} from "@/assets/svg";
+import { AppIcon, LoadingIndicator } from "@/assets/svg";
 
 import { useEffect, useState } from "react";
 import { Mission } from "../mission";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
-// import { MissionModal } from "../modal/mission-modal";
 import { mission1Data, mission2Data } from "./data";
-import { Modal } from "../modal/index-old";
-
+import { MissionModal } from "./mission-modal";
 
 export const checkAllMissionsCompleted = (
-  validatedMissions: Record<string, boolean>,
+  validatedMissions: Record<string, boolean>
 ) => {
   for (let i = 1; i <= 10; i++) {
     if (!validatedMissions[`Mission-${i}`]) {
@@ -25,7 +20,6 @@ export const checkAllMissionsCompleted = (
   }
   return true;
 };
-
 
 export const Missions = () => {
   const STORAGE_KEY = "validatedMissions";
@@ -36,11 +30,11 @@ export const Missions = () => {
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [activeMission, setActiveMission] = useState<"Mission 1" | "Mission 2">(
-    "Mission 1",
+    "Mission 1"
   );
 
   const [currentMissionKey, setCurrentMissionKey] = useState<string | null>(
-    null,
+    null
   );
   const [allMissionsCompleted, setAllMissionsCompleted] = useState(false);
 
@@ -52,7 +46,7 @@ export const Missions = () => {
       if (storedMissions) {
         const parsedValidatedMissions = JSON.parse(storedMissions);
         setAllMissionsCompleted(
-          checkAllMissionsCompleted(parsedValidatedMissions),
+          checkAllMissionsCompleted(parsedValidatedMissions)
         );
       }
     }
@@ -105,7 +99,7 @@ export const Missions = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ address: email }),
-        },
+        }
       );
 
       const data = await response.json();
@@ -118,14 +112,14 @@ export const Missions = () => {
           title: "✅Success",
           description: "Email submitted successfully! Redirecting...",
         });
-        setTimeout(()=>{
+        setTimeout(() => {
           push("/");
-        },1000)
+        }, 1000);
       } else {
         setStatus("error");
         console.error(
           "Failed to submit email:",
-          data.address || response.statusText,
+          data.address || response.statusText
         );
         toast({
           title: "❎Failed to submit email",
@@ -171,10 +165,18 @@ export const Missions = () => {
             ))}
             {/* Outlined JOIN Texts */}
             <div className="relative hidden lg:flex h-full">
-              <p className="absolute left-0 top-20 text-[250px] font-medium clipped-text">J</p>
-              <p className="absolute right-0 top-20 text-[250px] font-medium clipped-text">O</p>
-              <p className="absolute left-0 top-[300px] text-[250px] font-medium clipped-text">I</p>
-              <p className="absolute right-0 top-[300px] text-[250px] font-medium clipped-text">N</p>
+              <p className="absolute left-0 top-20 text-[250px] font-medium clipped-text">
+                J
+              </p>
+              <p className="absolute right-0 top-20 text-[250px] font-medium clipped-text">
+                O
+              </p>
+              <p className="absolute left-0 top-[300px] text-[250px] font-medium clipped-text">
+                I
+              </p>
+              <p className="absolute right-0 top-[300px] text-[250px] font-medium clipped-text">
+                N
+              </p>
             </div>
           </div>
           <div className="relative hidden lg:block">
@@ -202,22 +204,14 @@ export const Missions = () => {
               />
             ))}
             {/* Modal Component */}
-            <Modal
-            isOpen={currentMissionKey !== null}
-            missionData={missionData.find(
-              (data) => `Mission-${data.id}` === currentMissionKey,
-            )}
-            onClose={() => setCurrentMissionKey(null)}
-            setAllMissionsCompleted={setAllMissionsCompleted}
-            />
-            {/* <MissionModal
+            <MissionModal
               isOpen={currentMissionKey !== null}
               missionData={missionData.find(
-                (data) => `Mission-${data.id}` === currentMissionKey,
+                (data) => `Mission-${data.id}` === currentMissionKey
               )}
               onClose={() => setCurrentMissionKey(null)}
               setAllMissionsCompleted={setAllMissionsCompleted}
-            /> */}
+            />
 
             {activeMission === "Mission 1" ? (
               <div className="bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)] py-3 sm:py-7 px-4 sm:px-[30px] gap-3 flex flex-col xs:flex-row justify-between items-center w-full rounded-[20px] mt-24">
@@ -230,7 +224,7 @@ export const Missions = () => {
                   onClick={() => setActiveMission("Mission 2")}
                   className="font-semibold text-[#04141D] whitespace-nowrap w-fit sm:min-w-[150px] ml-2 sm:ml-4"
                 >
-                        Continue Missions
+                  Continue Missions
                 </Button>
               </div>
             ) : (

@@ -58,7 +58,15 @@ export default {
   					transform: 'translateX(0)'
   				},
   				'100%': {
-  					transform: 'translateX(-100%)'
+  					transform: 'translateX(calc(-100% - var(--gap)))'
+  				}
+  			},
+  			'marquee-reverse': {
+  				'0%': {
+  					transform: 'translateX(calc(-100% - var(--gap)))'
+  				},
+  				'100%': {
+  					transform: 'translateX(0)'
   				}
   			},
   			'slide-in': {
@@ -101,7 +109,8 @@ export default {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-  			marquee: 'marquee 8s linear infinite',
+  			marquee: 'marquee 20s linear infinite',
+  			"marquee-reverse": 'marquee-reverse 20s linear infinite',
   			'slide-in': 'slide-in 0.2s ease-in-out forwards',
   			'slide-out': 'slide-out 0.2s ease-in-out forwards',
   			'bounce-hero': 'bounce-hero 3s linear infinite',

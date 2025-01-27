@@ -5,6 +5,8 @@ import Footer from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import JoinUs from "@/components/join-us";
 import { Toaster } from "@/components/ui/toaster";
+import { ModalProvider } from "@/contexts/modal-context";
+import { Presale } from "@/components/presale";
 
 
 export const metadata: Metadata = {
@@ -51,13 +53,16 @@ export default function RootLayout({
       <body
         className={`${fontTSB.variable} antialiased bg-[#09141B] text-white`}
       >
-        <Navbar />
-        <>
-          {children}
-        </>
-        <Toaster />
-        <JoinUs />
-        <Footer />
+        <ModalProvider>
+          <Navbar />
+          <>
+            {children}
+          </>
+          <Presale />
+          <Toaster />
+          <JoinUs />
+          <Footer />
+        </ModalProvider>
       </body>
     </html>
   );
