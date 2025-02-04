@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "JOIN - One For All",
   description:
     "Unite and Play: Connect with Others, Transform Gaming into Rewards, and Earn Every Step of the Way with Blockchain-Powered Security and Innovation!",
+    metadataBase: new URL('https://thejoin.io'),
   openGraph: {
     title: "JOIN - One For All",
     description:
