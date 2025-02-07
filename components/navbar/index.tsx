@@ -55,7 +55,7 @@ export const Navbar = () => {
         },
         {
           title: "Discord",
-          path: "https://discord.gg/joineco",
+          path: "https://discord.gg/uf2TzvAsJX",
           background:
             "linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(135, 164, 213, 0.40) 85.38%)",
           icon: (

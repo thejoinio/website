@@ -13,6 +13,7 @@ import week5avatar from "@/assets/images/og-vr.svg";
 import week7meme from "@/assets/images/week-7-memes.png";
 import event2airdrop from "@/assets/images/event-2-airdrop.png";
 import event69 from "@/assets/images/event-69.png";
+import Link from "next/link";
 
 const JoinTokenSpeaker = () => (
   <div className="bg-white rounded-xl relative w-8 h-8">
@@ -68,9 +69,9 @@ const Event1Card = () => (
       <p className="text-xs/normal font-medium">Join Users</p>
       <p>+</p>
       <p className="text-xs/normal font-medium">Engagement Phase for Point Generation</p>
-      <button className="gap-1 font-medium flex justify-center items-center mt-3">
+      <Link href={'https://discord.gg/uf2TzvAsJX'} target="_blank" className="gap-1 font-medium flex justify-center items-center mt-3">
         Participate <ArrowUpRight />
-      </button>
+      </Link>
     </div>
   </div>
 );
@@ -145,8 +146,8 @@ const Event3Card = () => (
   </div>
 );
 
-const Event8Card = () => (
-  <div className="w-full max-w-md mx-auto sm:w-3/5 bg-event7 pt-5 pb-9 px-[15px] bg-cover rounded-3xl flex flex-col justify-center items-center">
+const Event8Card = ({type = 'default'}:{type?: string}) => (
+  <div className={`w-full max-w-md mx-auto sm:w-3/5 bg-event7 pt-5 pb-9 px-[15px] bg-cover rounded-3xl ${type === 'default'?'hidden sm:flex': 'flex sm:hidden'} flex-col justify-center items-center`}>
     <h5>Event 8</h5>
     <div className="mt-7 mb-3">
       <Image src={week7meme} alt="Memes" />
@@ -215,7 +216,7 @@ export default function Events() {
             {/* Event 3 Card */}
             <Event3Card />
             {/* Event 8 Card */}
-            <Event8Card />
+              <Event8Card />
           </div>
           <div className="flex flex-col sm:flex-row gap-8">
             {/* Week 3 Card */}
@@ -223,6 +224,7 @@ export default function Events() {
             {/* Event 5 Card */}
             <Event5Card />
           </div>
+            <Event8Card type="small" />
           {/* Event 6 - 9 Card */}
           <Event69Card />
         </div>
