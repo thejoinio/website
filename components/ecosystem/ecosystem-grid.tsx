@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { StoreButtons } from ".";
 import { Button } from "../button";
-// import { EcosystemCarousel } from "./carousel";
 import joinda from "@/assets/images/joinda-app-2.webp";
 import joint from "@/assets/images/joint-app-2.webp";
 import homeNSearch from "@/assets/vectors/home-n-search.svg";

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scroll-behavior: smooth;
+}
+
 .decorated-text {
     background: var(--Linear-2, linear-gradient(98deg, #8AE5CF 6.1%, #7C3AE7 103.66%));
     background-clip: text;

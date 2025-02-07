@@ -10,14 +10,14 @@ import PresaleSection from "@/components/presale-section";
 export default function Home() {
   return (
     <main className="font-[family-name:var(--font-tsb)] bg-mainBgMobile md:mainBg bg-cover">
-        <Hero />
-        <Possibilities />
-        <Events />
-        <Ecosystem />
-        <PresaleSection />
-        <Community />
-        <PartnersSection />
-        <FAQSSection />
-      </main>
+      <Hero />
+      <Possibilities />
+      <Events />
+      <Ecosystem />
+      <PresaleSection />
+      <Community />
+      <PartnersSection />
+      <FAQSSection />
+    </main>
   );
 }

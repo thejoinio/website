@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { fontTSB } from "@/fonts";
-import Footer from "@/components/footer";
-import { Navbar } from "@/components/navbar";
-import JoinUs from "@/components/join-us";
-import { Toaster } from "@/components/ui/toaster";
-import { ModalProvider } from "@/contexts/modal-context";
-import { Presale } from "@/components/presale";
+import LayoutClient from "./layout-client";
 
 
 export const metadata: Metadata = {
@@ -53,16 +48,7 @@ export default function RootLayout({
       <body
         className={`${fontTSB.variable} antialiased bg-[#09141B] text-white`}
       >
-        <ModalProvider>
-          <Navbar />
-          <>
-            {children}
-          </>
-          <Presale />
-          <Toaster />
-          <JoinUs />
-          <Footer />
-        </ModalProvider>
+        <LayoutClient>{children}</LayoutClient>
       </body>
     </html>
   );

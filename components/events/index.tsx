@@ -65,9 +65,9 @@ const Event1Card = () => (
       </div>
     </div>
     <div className="flex flex-col justify-center text-center rounded-b-xl text-xs/normal gap-[5px] py-5 px-[14px] bg-[linear-gradient(98deg,#2E5E52_6.1%,#121010_103.66%)]">
-      <p className="text-xs/normal font-medium">User Gain</p>
+      <p className="text-xs/normal font-medium">Join Users</p>
       <p>+</p>
-      <p className="text-xs/normal font-medium">Engagement Phase</p>
+      <p className="text-xs/normal font-medium">Engagement Phase for Point Generation</p>
       <button className="gap-1 font-medium flex justify-center items-center mt-3">
         Participate <ArrowUpRight />
       </button>

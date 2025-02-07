@@ -103,9 +103,9 @@ export const Navbar = () => {
         },
       ],
     },
-    { label: "Whitepaper", path: "/#" },
-    { label: "Products", path: "/#" },
-    { label: "Partners", path: "/#" },
+    { label: "Whitepaper", path: "/whitepaper" },
+    { label: "Products", path: "/#products" },
+    { label: "Partners", path: "/#partners" },
   ];
 
   return (

@@ -1,7 +1,7 @@
 export const Marquee = () => {
   
   return (
-        <div className="flex border border-blue-700">
+        <div className="flex">
           <p
             className={`text-xs font-medium uppercase text-[#6B7280] py-0 whitespace-nowrap`}
             >

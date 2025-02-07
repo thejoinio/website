@@ -43,7 +43,6 @@ export default function Ecosystem () {
               />
               IN Ecosystem
           </h2>
-
           <EcosystemGrid />
         </div>
       </section>
