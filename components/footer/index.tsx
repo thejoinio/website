@@ -23,7 +23,7 @@ export default function Footer () {
         },
         {
           title: "LinkedIn",
-          url: "https://www.linkedin.com/",
+          url: "https://www.linkedin.com/company/thejoineco",
           icon: <LinkedinIcon />,
         },
       ];
