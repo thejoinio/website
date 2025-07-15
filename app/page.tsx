@@ -1,4 +1,3 @@
-import Community from "@/components/communty";
 import Ecosystem from "@/components/ecosystem";
 import Events from "@/components/events";
 import FAQSSection from "@/components/faqs-section";

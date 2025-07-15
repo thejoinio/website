@@ -10,7 +10,6 @@ import makePaymentCards from "@/assets/images/make-payment-cards.png";
 import earnRewards from "@/assets/images/earn-rewards.png";
 import raiseFunds from "@/assets/images/raise-funds.png";
 import affilliation from "@/assets/images/affiliation.png";
-import { HexagonalJoin } from "@/assets/svg";
 // import { HexagonalJoin } from "@/assets/svg";
 
 export default function Possibilities() {
