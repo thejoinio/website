@@ -2,11 +2,14 @@ import Image from "next/image";
 import joinToken from "@/assets/icons/join-token.webp";
 import hero from "@/assets/images/hero.webp";
 import { AnimatedText } from "../aimated-text";
+import game from "@/assets/images/game1.jpg";
+
+
 
 export default function Hero() {
   return (
-    <section className="hero-section relative gap-4 font-[family-name:var(--font-geist-sans)] w-full mx-auto overflow-hidden pt-20 px-5 md:px-10 lg:px-20">
-      <div className="flex flex-col gap-[72px] pt-[60px]">
+    <section className="hero-section relative gap-4 font-[family-name:var(--font-geist-sans)] w-full mx-auto overflow-hidden pt-20 px-5 md:px-10 lg:px-20 h-screen">
+      <div className="flex flex-col gap-[72px] pt-[60px]  relative">
         <div className="flex flex-col gap-[22px] relative hero-heading">
           <h1 className="text-3xl/tight xs:text-[40px]/normal md:text-[64px]/normal font-medium max-w-[13ch] xs:max-w-[18ch] mx-auto text-center">
             Experience J
@@ -31,6 +34,35 @@ export default function Hero() {
           <div className="absolute top-[50px] left-1/2 -translate-x-1/2 w-full h-full max-w-[556px] mx-auto bg-[#D9D9D9]/10 blur-[100px]" />
           <div className="absolute -bottom-16 text-background left-1/2 -translate-x-1/2">
             JOIN
+          </div>
+          <div className="relative w-[279px] h-[232.3246px] bg-gray-900 rounded-[12px] overflow-hidden">
+            <div className="absolute inset-0 border-2 border-[linear-gradient(90deg,_#8AE5CF_30%,_#7C3AE7_70%)] rounded-lg"></div>
+
+            {/* Content */}
+            <div className="relative flex flex-col items-center justify-center h-full text-white bg-[linear-gradient(90deg,_#8AE5CF_30%,_#7c3AE7_70%)] p-4">
+              {/* Top Text */}
+              <div className="flex items-center space-x-1">
+                <span className="text-xl font-bold">||</span>
+                <h2 className="text-xl font-semibold">Gaming</h2>
+                <span className="text-2xl font-bold">||</span>
+              </div>
+
+              <div className="mt-6 w-[80px] h-[80px] bg-gray-800 rounded-full flex items-center justify-center overflow-hidden">
+                <Image
+                  src={game}
+                  alt="Gaming"
+                  className="object-cover w-full h-full"
+                  width={80}
+                  height={80}
+        
+                />
+              </div>
+
+              {/* Bottom Text */}
+              <div className="mt-6 text-center">
+                <p className="text-sm font-medium">Beta Testing with Beta</p>
+              </div>
+            </div>
           </div>
           <Image
             src={hero}

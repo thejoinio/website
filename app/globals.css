@@ -21,7 +21,14 @@
     -webkit-text-fill-color: transparent;
     font-size: clamp(450px, 4vw, 560px) !important;
 }
-
+.hero-section {
+ background-image: url('../assets/gif/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+    
+}
 .silver-text {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0.26) 60.33%);
     background-clip: text;
@@ -69,12 +76,23 @@
     }
 }
 
+.hero-section, .hero-heading, .hero-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
   .hero-section::before, .hero-heading::before, .hero-heading::after, .hero-image::before, .hero-image::after {
     content: "";
     position: absolute;
     border-radius: 274px;
-    background: #8940FF;
-    filter: blur(277.5px);
+   
+    filter: blur(10007.5px);
     width: 274px;
     height: 274px;
     flex-shrink: 0;
@@ -209,6 +227,11 @@
     bottom: 0;
   }
 
+  .Join-token{
+    flex-shrink: 0;
+     background-image: url('../assets/images/presale-section-bg.png');
+    background: linear-gradient(123deg, #09141B -2.63%, #AA9CFC 104.28%);
+  }
   .community-section::before, .community::before, .community::after {    
     content: "";
     position: absolute;
