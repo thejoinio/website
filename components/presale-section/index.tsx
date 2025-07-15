@@ -1,5 +1,4 @@
 import Image from "next/image";
-import demigods from '@/assets/images/demigods-nft-cards.png'
 import card from "@/assets/images/crypto-debit-card.png";
 import { Button } from "../button";
 
