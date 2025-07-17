@@ -2,9 +2,6 @@ import Image from "next/image";
 import joinToken from "@/assets/icons/join-token.webp";
 import hero from "@/assets/images/hero.webp";
 import { AnimatedText } from "../aimated-text";
-import game from "@/assets/images/game1.jpg";
-
-
 
 export default function Hero() {
   return (
