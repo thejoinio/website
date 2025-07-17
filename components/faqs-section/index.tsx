@@ -10,27 +10,27 @@ interface IfaqData {
 const faqData: IfaqData[] = [
   {
     title: "What is the main purpose of the JOIN token?",
-    content: "Governance, staking, and access to exclusive features.",
+    content: "JOIN token is a utility token used for transactions, staking, rewards, and unlocking exclusive features across the Joinda ecosystem.",
   },
   {
     title: "What type of ecosystem does JOIN aim to create?",
-    content: "An inclusive, and innovative ecosystem.",
+    content: "JOIN powers an inclusive, user-driven Web2-Web3 ecosystem that blends social networking, gaming, and digital finance in one integrated experience.",
   },
   {
     title: "How does JOIN intend to incorporate Web3 technology?",
-    content: "By facilitating seamless interactions between users and decentralized applications (dApps).",
+    content: "JOIN enables seamless interactions with decentralized features like communities, quests, token-based incentives, wallet integrations, and staking, bridging users with dApps.",
   },
   {
     title: "What is one of the primary objectives of the JOIN project?",
-    content: "To empower creators by offering tools and opportunities within a decentralized ecosystem.",
+    content: "To empower users and creators by enabling monetization, ownership, and visibility through blockchain-powered tools and rewards.",
   },
   {
-    title: "How can I purchase JOIN?",
-    content: "Simply connect your wallet, specify the amount of SOL or USDT you wish to spend on tokens, and click the 'buy' button. You can purchase tokens with a minimum of 0.001 SOL or 1 USDT. Once the presale concludes, you'll be able to claim your tokens.",
+    title: "How can I purchase JOIN Token?",
+    content: "During the presale, simply connect your wallet, select SOL or USDT, input the amount, and click ‘Buy’. The minimum is 0.001 SOL or 1 USDT. After the presale, tokens will be claimable.",
   },
   {
     title: "Which Blockchain network is the JOIN primarily built on?",
-    content: "The JOIN token is built on the Solana network.",
+    content: "JOIN token is built on the Solana network, chosen for its speed, low transaction costs, and scalability.",
   },
   {
     title: "How do I claim my Pre-sale tokens?",
