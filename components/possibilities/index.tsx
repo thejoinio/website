@@ -1,17 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import joinToken from "@/assets/icons/join-token.webp";
 import { Card } from "./card";
-<<<<<<< HEAD
-import joinExchange from "@/assets/images/join-exchange-cards.png";
-import digiArt from "@/assets/images/digital-art-cube-with-square-middle.png";
-import nftCollection from "@/assets/images/nft-collections.png";
-import cryptoDebitCard from "@/assets/images/crypto-debit-card.png";
-import lotteriesParticipation from "@/assets/images/lotteries-participation.png";
-import makePaymentCards from "@/assets/images/make-payment-cards.png";
-import earnRewards from "@/assets/images/earn-rewards.png";
-import raiseFunds from "@/assets/images/raise-funds.png";
-import affilliation from "@/assets/images/affiliation.png";
-=======
 import joinExchange from '@/assets/images/join-exchange-cards.png';
 import digiArt from '@/assets/images/digital-art-cube-with-square-middle.png';
 import nftCollection from '@/assets/images/nft-collections.png';
@@ -21,7 +10,6 @@ import earnRewards from '@/assets/images/earn-reward.png';
 import commEng from '@/assets/images/community-engagement.png'
 import raiseFunds from '@/assets/images/raise-funds.png';
 import affiliatePrograms from '@/assets/images/affiliate-program.png'
->>>>>>> f9a7537 (feat: new updates ✨✅)
 import { HexagonalJoin } from "@/assets/svg";
 
 export default function Possibilities() {
@@ -40,13 +28,8 @@ export default function Possibilities() {
       details:
         "Use JOIN as a secure and transparent means of exchange within the ecosystem.",
     },
-<<<<<<< HEAD
-    {
-      heading: "In-Games Purchases",
-=======
     { 
       heading: "Gaming & Tournament",
->>>>>>> f9a7537 (feat: new updates ✨✅)
       image: digiArt,
       width: 420,
       height: 394,
@@ -60,21 +43,12 @@ export default function Possibilities() {
       details:
         "Introducing our global decentralized crypto debit card for in - store and online payments.",
     },
-<<<<<<< HEAD
-    {
-      heading: "NFT Collections",
-      image: nftCollection,
-      width: 630,
-      height: 353,
-      details: "Get access to our NFT collections on JOIN.",
-=======
     { 
       heading: "Quest Participation",
       image: nftCollection,
       width: 630,
       height: 353,
       details: "Complete community-driven tasks to earn rewards and boost engagement."
->>>>>>> f9a7537 (feat: new updates ✨✅)
     },
     {
       heading: "Make Payment",
@@ -84,28 +58,13 @@ export default function Possibilities() {
       details:
         "Pay for a wide range of products and services using JOIN tokens",
     },
-<<<<<<< HEAD
-    {
-      heading: "Lotteries Participation",
-      image: lotteriesParticipation,
-      width: 579,
-      height: 366,
-      details:
-        "Participate in lotteries that ensure fairness through blockchain technology.",
-    },
-    {
-=======
     { 
->>>>>>> f9a7537 (feat: new updates ✨✅)
       heading: "Earn Rewards",
       image: earnRewards,
       width: 432,
       height: 451,
       details: "Earn Rewards in JOIN for high engagement and content creation.",
     },
-<<<<<<< HEAD
-    {
-=======
     { 
       heading: "Community Engagement",
       image: commEng,
@@ -114,7 +73,6 @@ export default function Possibilities() {
       details: "Build, manage, and monetize vibrant communities with powerful admin tools."
     },
     { 
->>>>>>> f9a7537 (feat: new updates ✨✅)
       heading: "Raise Funds",
       image: raiseFunds,
       width: 420,
@@ -122,19 +80,6 @@ export default function Possibilities() {
       details:
         "Raise Funds by launching crowdfunding campaigns for your projects.",
     },
-<<<<<<< HEAD
-
-    {
-      heading: "Affiliate Program",
-      image: affilliation,
-      width: 420,
-      height: 427,
-      details:
-        "Raise Funds by launching crowdfunding campaigns for your projects.",
-    },
-  ];
-
-=======
     { 
       heading: "Affiliate Program",
       image: affiliatePrograms,
@@ -144,7 +89,6 @@ export default function Possibilities() {
     },
   ]
   
->>>>>>> f9a7537 (feat: new updates ✨✅)
   return (
     <>
       <div className="flex md:px-[18px] max-w-[1440px] mx-auto">
@@ -188,47 +132,10 @@ export default function Possibilities() {
               <div className="hidden md:flex self-start pt-2.5">
                 <div className="hidden"></div>
               </div>
-<<<<<<< HEAD
-              <div className="mt-6 xs:mt-[60px] md:mt-0">
-                <Card
-                  height={data[1].height}
-                  image={data[1].image}
-                  width={data[1].width}
-                  details={data[1].details}
-                  heading={data[1].heading}
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 justify-items-center md:place-items-center md:gap-y-[60px] md:gap-7 md:mt-[60px] w-full max-w-[1440px] mx-auto px-4 md:px-[55px] lg:px-24">
-              {data.slice(2).map((d, idx) => {
-                const totalItems = data.slice(2).length;
-                const isLastItem = idx === totalItems - 1;
-                return (
-                  <div
-                    key={idx}
-                    className={`${
-                      idx === 1 ? "md:-mt-[350px] mt-6 xs:mt-[50px]" : ""
-                    } ${idx === 4? "md:-mt-[350px]" : ""} ${
-                      idx === 3 || idx === 5 ? "mt-6 xs:mt-[50px] md:mt-0" : ""
-                    } ${
-                      isLastItem
-                        ? "md:col-span-3 md:row-start-3 md:mx-auto "
-                        : ""
-                    }`}
-                  >
-                    <Card
-                      height={d.height}
-                      image={d.image}
-                      width={d.width}
-                      details={d.details}
-                      heading={d.heading}
-                    />
-=======
               <div className="grid grid-cols-2 md:grid-cols-3 justify-items-center md:place-items-center md:gap-y-[60px] md:gap-7 md:mt-[60px] w-full max-w-[1440px] mx-auto px-4 md:px-[55px] lg:px-24">
                 {data.slice(2, 8).map((d, idx)=> {
                   return <div key={idx} className={`${idx === 1?  "md:-mt-[350px] mt-6 xs:mt-[50px]": ""} ${idx === 4? "md:-mt-[350px]": ""} ${idx === 3 || idx === 5? "mt-6 xs:mt-[50px] md:mt-0": ""}`}>
                     <Card height={d.height} image={d.image} width={d.width} details={d.details} heading={d.heading} />
->>>>>>> f9a7537 (feat: new updates ✨✅)
                   </div>
                 );
               })}
