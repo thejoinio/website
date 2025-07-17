@@ -5,7 +5,7 @@ import joindaDesktop from '@/assets/images/joinda-desktop.png';
 // import homeNSearch from "@/assets/vectors/home-n-search.svg";
 
 const GridOne = () => (
-  <div className="grid-one grid relative overflow-hidden lg:col-span-4 lg:row-span-3 lg:flex flex-col rounded-2xl shadow-[0px_13.339px_21.4px_0px_rgba(0,0,0,0.25)] p-5 md:p-7 pb-0 md:pb-0">
+  <div className="grid-one grid relative overflow-hidden lg:col-span-4 lg:row-span-3 lg:flex flex-col justify-end rounded-2xl shadow-[0px_13.339px_21.4px_0px_rgba(0,0,0,0.25)] p-5 md:p-7 pb-0 md:pb-0">
     <div className="flex flex-col gap-3 lg:gap-4 relative grid-one-div">
       <h4 className="text-[28px]/normal md:text-[32px]/normal font-semibold">
         Joinda App
