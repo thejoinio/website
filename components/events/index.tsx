@@ -10,9 +10,9 @@ import {
   UnionIcon,
 } from "@/assets/svg";
 import week5avatar from "@/assets/images/og-vr.svg";
-import week7meme from "@/assets/images/week-7-memes.png";
 import event2airdrop from "@/assets/images/event-2-airdrop.png";
 import event69 from "@/assets/images/event-69.png";
+import event8 from '@/assets/images/event-8.png';
 import Link from "next/link";
 
 const JoinTokenSpeaker = () => (
@@ -150,7 +150,7 @@ const Event8Card = ({type = 'default'}:{type?: string}) => (
   <div className={`w-full max-w-md mx-auto sm:w-3/5 bg-event7 pt-5 pb-9 px-[15px] bg-cover rounded-3xl ${type === 'default'?'hidden sm:flex': 'flex sm:hidden'} flex-col justify-center items-center`}>
     <h5>Event 8</h5>
     <div className="mt-7 mb-3">
-      <Image src={week7meme} alt="Memes" />
+      <Image src={event8} alt="Social media image" />
     </div>
     <p className="text-center mt-4">Community Feature Release</p>
   </div>

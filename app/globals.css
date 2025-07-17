@@ -369,3 +369,55 @@
  div .modal-token-bg {
    background: linear-gradient(112deg, rgba(4, 20, 29, 0.40) 14.96%, rgba(14, 127, 184, 0.40) 85.38%);
  }
+
+  /* Keyframe for rotation */
+        @keyframes rotateBackground {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        .fullscreen-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /* Optional: Flexbox to center any content that is placed directly in this container */
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white; 
+            font-family: sans-serif;
+            text-align: center;
+            font-size: 2em;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7); */
+        }
+
+        .fullscreen-container::before {
+            content: '';
+            position: absolute;
+            /* Making it significantly larger than the viewport */
+            width: 250vw; /* Using vw/vh for screen coverage */
+            height: 250vh; /* Using vw/vh for screen coverage */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the pseudo-element */
+            background-image: url('../assets/images/background.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: repeat;
+            z-index: -1; /* Place it behind all other content */
+
+            /* Apply the animation */
+            animation: rotateBackground 60s linear infinite; /* Slower rotation for background */
+        }
+
+        /* Example of content that stays static */
+        .content-overlay {
+            position: relative; /* Ensure content is above the pseudo-element background */
+            z-index: 1;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */
+        }
