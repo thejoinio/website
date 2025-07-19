@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { fontTSB } from "@/fonts";
+import { abel, fontTSB } from "@/fonts";
 import LayoutClient from "./layout-client";
 
 
@@ -46,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fontTSB.variable} antialiased bg-[#09141B] text-white`}
+        className={`${fontTSB.variable} ${abel.variable} antialiased bg-[#09141B] text-white`}
       >
         <LayoutClient>{children}</LayoutClient>
       </body>

@@ -39,16 +39,17 @@ const WeekHeader: React.FC<{ heading: string; text: string }> = ({
     <p className="text-[#73767D] text-[10px]">{text}</p>
   </div>
 );
-const UnionHead: React.FC<{ heading: string; className?: string }> = ({
+export const UnionHead: React.FC<{ heading: string; className?: string; small?: boolean; }> = ({
   heading,
   className = "",
+  small = false
 }) => {
   return (
     <div
       className={`flex justify-between items-center h-10 w-full min-w-[120px] max-w-[157px] bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)] ${className}`}
     >
       <UnionIcon />
-      <h5 className="text-lg/normal font-medium">{heading}</h5>
+      <h5 className={`${small ? "text-base/normal font-medium":"text-lg/normal font-medium" }`}>{heading}</h5>
       <UnionIcon />
     </div>
   );
