@@ -94,7 +94,7 @@ export default function PresaleSection() {
   return (
     <section className="presale-section overflow-hidden py-[60px] md:py-[52px] relative">
       <div className="flex flex-col-reverse md:flex-row items-center gap-[60px] relative w-full max-w-[1440px] mx-auto md:px-10 lg:px-20">
-        <div className="flex justify-center items-center w-full md:w-1/2 relative">
+        <div className="flex justify-center items-center w-full md:w-[55%] relative">
           <ShinyStar className="absolute bottom-4" />
           <ShinyStar className="absolute left-0" />
           <ShinyStar className="absolute right-0 lg:right-4 top-16" />
@@ -103,10 +103,10 @@ export default function PresaleSection() {
             alt="Crypto Debit Card"
             width={1035}
             height={908}
-            className="w-full max-w-[550px] z-10"
+            className="w-full max-w-[650px] z-10"
           />
         </div>
-        <div className="flex flex-col gap-5 xs:gap-[30px] w-full md:w-1/2 z-10 px-5 md:px-0">
+        <div className="flex flex-col gap-5 xs:gap-[30px] w-full md:w-[45%] z-10 px-5 md:px-0">
           <h4 className="text-2xl/normal xs:text-4xl/normal md:text-5xl/normal">
             Grab your Spot in the JOIN Presale.
           </h4>
