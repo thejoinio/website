@@ -6,7 +6,7 @@ import { useState } from "react";
 export const Card: React.FC<{heading?: string, image: string|StaticImageData, width: number, height: number, details?: string}> = ({heading="Means of Exchange", image, width, height, details="Use JOIN as a secure and transparent means of exchange within the ecosystem."}) => {
     const [active, setActive] = useState(false);
     return (
-        <div className="bg-[#09141B] flex h-fit rounded-3xl scale-90 md:scale-100">
+        <div className="bg-[#09141B] bg-opacity-0 flex h-fit rounded-3xl scale-90 md:scale-100">
             <div onBlur={()=>setActive(false)} onClick={()=>setActive(!active)} className="flex flex-col items-center relative group w-full max-w-[272px] aspect-square transition-all duration-1000 gap-2.5 hover:gap-5 border border-white/80 rounded-[14px] p-4 md:p-5 bg-opacity-100 bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)] z-10">
                 <h4 className="text-xl/6 text-center max-w-[9ch] mx-auto overflow-hidden transition-all duration-1000 grid !grid-rows-[1fr] opacity-100 group-hover:!grid-rows-[0fr] group-hover:opacity-0 group-hover:transition-all group-hover:duration-1000">
                 <span className="overflow-hidden">

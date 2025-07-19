@@ -11,7 +11,7 @@ import JoinTelegram from "@/assets/community/telegram.webp";
 import JoinDiscord from "@/assets/community/discord.webp";
 import JoinLinkedIn from "@/assets/community/linkedin.webp";
 import JoinTwitter from "@/assets/community/x.webp";
-import { useModal } from "@/contexts/modal-context";
+// import { useModal } from "@/contexts/modal-context";
 
 export interface INavLink {
   label: string;
@@ -29,7 +29,7 @@ export interface INavLink {
 
 export const Navbar = () => {
   const [isNavOpened, setIsNavOpened] = useState(false);
-  const {openModal} = useModal()
+  // const {openModal} = useModal()
 
   const navLinks: INavLink[] = [
     {
@@ -109,7 +109,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full font-[family-name:var(--font-tsb)] border-b border-[#374151] bg-[#09141B]/80 backdrop-blur">
+    <header className="fixed top-0 z-50 w-full font-[family-name:var(--font-tsb)] border-b border-[#374151] bg-[#09141B]/10 backdrop-blur">
       <nav className="flex justify-between items-center w-full max-w-[1440px] mx-auto h-20 px-4 md:px-10 lg:px-20">
         <Link href={"/"} className="flex items-center z-50 h-[30px]">
           <Image
@@ -148,7 +148,7 @@ export const Navbar = () => {
           )}
         </ul>
         <div className="hidden md:flex">
-          <Button variant="dark" disabled onClick={openModal}>
+          <Button variant="dark" onClick={()=>console.log("Presale coming soon")}>
             Join Presale
           </Button>
         </div>
