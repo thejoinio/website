@@ -10,9 +10,9 @@ import {
   UnionIcon,
 } from "@/assets/svg";
 import week5avatar from "@/assets/images/og-vr.svg";
-import week7meme from "@/assets/images/week-7-memes.png";
 import event2airdrop from "@/assets/images/event-2-airdrop.png";
 import event69 from "@/assets/images/event-69.png";
+import event8 from '@/assets/images/event-8.png';
 import Link from "next/link";
 
 const JoinTokenSpeaker = () => (
@@ -39,16 +39,17 @@ const WeekHeader: React.FC<{ heading: string; text: string }> = ({
     <p className="text-[#73767D] text-[10px]">{text}</p>
   </div>
 );
-const UnionHead: React.FC<{ heading: string; className?: string }> = ({
+export const UnionHead: React.FC<{ heading: string; className?: string; small?: boolean; }> = ({
   heading,
   className = "",
+  small = false
 }) => {
   return (
     <div
       className={`flex justify-between items-center h-10 w-full min-w-[120px] max-w-[157px] bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)] ${className}`}
     >
       <UnionIcon />
-      <h5 className="text-lg/normal font-medium">{heading}</h5>
+      <h5 className={`${small ? "text-base/normal font-medium":"text-lg/normal font-medium" }`}>{heading}</h5>
       <UnionIcon />
     </div>
   );
@@ -150,7 +151,7 @@ const Event8Card = ({type = 'default'}:{type?: string}) => (
   <div className={`w-full max-w-md mx-auto sm:w-3/5 bg-event7 pt-5 pb-9 px-[15px] bg-cover rounded-3xl ${type === 'default'?'hidden sm:flex': 'flex sm:hidden'} flex-col justify-center items-center`}>
     <h5>Event 8</h5>
     <div className="mt-7 mb-3">
-      <Image src={week7meme} alt="Memes" />
+      <Image src={event8} alt="Social media image" />
     </div>
     <p className="text-center mt-4">Community Feature Release</p>
   </div>

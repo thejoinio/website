@@ -7,7 +7,7 @@ import { Button } from "../button";
 
 export default function Community () {
     return (
-        <section className="community-section bg-communityLooper bg-bottom bg-cover mt-px relative overflow-hidden pb-10 md:pb-20">
+        <section className="hidden community-section bg-communityLooper bg-bottom bg-cover mt-px relative overflow-hidden pb-10 md:pb-20">
             <div className="community flex flex-col mt-[50px] gap-[30px] w-full max-w-[1440px] mx-auto px-5 md:px-10 lg:px-20">
                 <div className="flex flex-col gap-2.5 mb-5 xs:mb-[30px]">
                     <h2 className="text-2xl/normal xs:text-[48px]/normal font-medium mx-auto text-center">

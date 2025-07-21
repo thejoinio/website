@@ -1,4 +1,5 @@
 import localFont from 'next/font/local';
+import {Abel} from 'next/font/google'
 
 export const fontTSB = localFont({src: [
     {
@@ -25,6 +26,11 @@ export const fontTSB = localFont({src: [
 preload: true,
 variable: "--font-tsb",
 
+})
+export const abel = Abel({
+    variable: "--font-abel",
+    weight: "400",
+    subsets: ["latin"]
 })
 // export const fontTSBMedium = localFont({src: [
     
