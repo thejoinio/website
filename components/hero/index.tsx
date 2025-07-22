@@ -6,11 +6,11 @@ import { UnionHead } from "../events";
 import week5avatar from "@/assets/images/og-vr.svg";
 
 const PrelaunchQuest = () => (
-  <div className="hidden md:flex w-full p-[14px] max-w-[250px] lg:max-w-[270px] border-white/20 border rounded-3xl absolute md:-right-4 xl:right-20">
-    <div className="w-full max-w-md flex flex-col justify-center items-center gap-[15px] rounded-2xl p-6 px-[15px] bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)]">
+  <div className="flex w-full p-2.5 md:p-[14px] max-w-[117px] md:max-w-[250px] lg:max-w-[270px] border-white/20 border rounded-3xl absolute left-0 md:-left-4 xl:left-20 top-[40%] md:top-1/3">
+    <div className="w-full max-w-md flex flex-col justify-center items-center gap-2 rounded-2xl p-2 md:p-6 pb-0.5 md:pb-2 px-[15px] bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)]">
       <UnionHead heading="Join Pre-Launch Quest" small className="font-[family-name:var(--font-abel)]" />
-      <p className="text-sm text-center font-[family-name:var(--font-abel)]">Earn While Waiting</p>
-      <div className="beta-testing bg-ogBg bg-center bg-contain p-6 rounded-full">
+      <p className="text-[6px] md:text-sm text-center font-[family-name:var(--font-abel)]">Earn While Waiting</p>
+      <div className="beta-testing bg-ogBg bg-center bg-contain p-3 md:p-6 rounded-full">
         <Image
           src={week5avatar}
           alt="A man using VR"
@@ -19,7 +19,7 @@ const PrelaunchQuest = () => (
           className=" rounded-full"
         />
       </div>
-      <button className="font-[family-name:var(--font-abel)] p-2.5 w-full max-w-[135px] rounded-lg" style={{ background: "linear-gradient(98deg, #8AE5CF 6.1%, #7C3AE7 103.66%)"}}>Start Earning</button>
+      <button className="text-[8px] md:text-base font-[family-name:var(--font-abel)] py-[3.5px] md:py-2.5 p-2.5 w-full max-w-[135px] rounded-lg" style={{ background: "linear-gradient(98deg, #8AE5CF 6.1%, #7C3AE7 103.66%)"}}>Start Earning</button>
     </div>
   </div>
 );
