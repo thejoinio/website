@@ -6,6 +6,7 @@ import Hero from "@/components/hero";
 import JoinTokenSection from "@/components/join-token-section";
 import Possibilities from "@/components/possibilities";
 import PresaleSection from "@/components/presale-section";
+import WaitlistSection from "@/components/waitlist-section";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <PresaleSection />
       <JoinTokenSection />
       <Community />
+      <WaitlistSection />
       <FAQSSection />
     </main>
   );
