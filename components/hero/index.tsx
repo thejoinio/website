@@ -4,6 +4,7 @@ import hero from "@/assets/images/hero.webp";
 import { AnimatedText } from "../aimated-text";
 import { UnionHead } from "../events";
 import week5avatar from "@/assets/images/og-vr.svg";
+import Link from "next/link";
 
 const PrelaunchQuest = () => (
   <div className="flex w-full p-2.5 md:p-[14px] max-w-[117px] md:max-w-[250px] lg:max-w-[270px] border-white/20 border rounded-3xl absolute left-0 md:-left-4 xl:left-20 top-[40%] md:top-1/3">
@@ -19,7 +20,7 @@ const PrelaunchQuest = () => (
           className=" rounded-full"
         />
       </div>
-      <button className="text-[8px] md:text-base font-[family-name:var(--font-abel)] py-[3.5px] md:py-2.5 p-2.5 w-full max-w-[135px] rounded-lg" style={{ background: "linear-gradient(98deg, #8AE5CF 6.1%, #7C3AE7 103.66%)"}}>Start Earning</button>
+      <Link href="/coming-soon" className="text-[8px] text-center md:text-base font-[family-name:var(--font-abel)] py-[3.5px] md:py-2.5 p-2.5 w-full max-w-[135px] rounded-lg" style={{ background: "linear-gradient(98deg, #8AE5CF 6.1%, #7C3AE7 103.66%)"}}>Start Earning</Link>
     </div>
   </div>
 );

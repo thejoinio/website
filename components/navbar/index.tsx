@@ -148,7 +148,7 @@ export const Navbar = () => {
           )}
         </ul>
         <div className="hidden md:flex">
-          <Button variant="dark" onClick={()=>console.log("Presale coming soon")}>
+          <Button variant="dark" href="/coming-soon">
             Join Presale
           </Button>
         </div>
