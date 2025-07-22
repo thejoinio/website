@@ -46,11 +46,11 @@ export const UnionHead: React.FC<{ heading: string; className?: string; small?: 
 }) => {
   return (
     <div
-      className={`flex justify-between items-center h-10 w-full min-w-[120px] max-w-[157px] bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)] ${className}`}
+      className={`flex justify-between items-center w-full ${small ? "h-4 md:h-10 min-w-[90px] md:min-w-[120px]": "h-10 min-w-[120px]"} max-w-[157px] bg-[linear-gradient(98deg,rgba(102,254,203,0.20)_6.1%,rgba(137,64,255,0.20)_103.66%)] ${className}`}
     >
-      <UnionIcon />
-      <h5 className={`${small ? "text-base/normal font-medium":"text-lg/normal font-medium" }`}>{heading}</h5>
-      <UnionIcon />
+      <UnionIcon small={small} />
+      <h5 className={`${small ? "text-[8px] md:text-base/normal font-medium":"text-lg/normal font-medium" }`}>{heading}</h5>
+      <UnionIcon small={small} />
     </div>
   );
 };
