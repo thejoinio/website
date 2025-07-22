@@ -116,7 +116,7 @@ export default function PresaleSection() {
           <Button
             variant="dark"
             className="text-xl px-[30px] py-[15px]"
-            disabled
+            href="/coming-soon"
           >
             Join Presale
           </Button>
