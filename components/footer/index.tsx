@@ -13,7 +13,7 @@ export default function Footer () {
         },
         {
           title: "Discord",
-          url: "https://discord.gg/joineco",
+          url: "https://discord.com/invite/uf2TzvAsJX",
           icon: <DiscordIcon />,
         },
         {
