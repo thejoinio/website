@@ -37,7 +37,7 @@ export default function WaitlistSection() {
 
     try {
       const response = await fetch(
-        "http://teapot.thejoin.io/helper/submit-email/",
+        "https://teapot.thejoin.io/helper/submit-email/",
         {
           method: "POST",
           headers: {
@@ -54,7 +54,7 @@ export default function WaitlistSection() {
         setEmail("");
         toast({
           title: "✅Success",
-          description: "Email submitted successfully! Redirecting...",
+          description: "Email submitted successfully! You will be notified when we are live.",
         });
         
       } else {
