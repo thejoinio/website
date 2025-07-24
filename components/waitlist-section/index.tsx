@@ -38,7 +38,7 @@ export default function WaitlistSection({
             handleSubmit({
               event: e,
               setStatus,
-              type: "thejoin-waitlist",
+              type: type === "Waitlist" ? "thejoin-waitlist" : "thejoin-whitelist",
               resetEmail,
               toast,
               email,
