@@ -98,7 +98,7 @@ const Event2Card = () => (
       <p className="text-xs/normal font-medium">
         - Reward/Airdrop Point (JOIN Point)
       </p>
-      <Link href="/coming-soon" className="gap-1 flex justify-center items-center">
+      <Link href="/waitlist" className="gap-1 flex justify-center items-center">
         Join <ArrowUpRight />
       </Link>
     </div>
@@ -113,7 +113,7 @@ const Event4Card = () => (
         1st Quiz and Riddle event with rewards.
       </p>
     </div>
-    <Link href="/coming-soon" className="flex justify-center items-center gap-1 bg-white text-[#09141B] rounded-full px-5 py-2.5">
+    <Link href="/waitlist" className="flex justify-center items-center gap-1 bg-white text-[#09141B] rounded-full px-5 py-2.5">
       <Calendar /> Get your spot
     </Link>
   </div>
@@ -125,7 +125,7 @@ const Event5Card = () => (
       <h5 className="text-2xl font-semibold">Event 5</h5>
       <p className="text-sm/[25px]">Whitelisting Phase</p>
     </div>
-    <Link href="/coming-soon" className="relative gradient-border-div text-white text-center bg-[#121010]/50 font-medium outline-transparent py-[10px] px-5 rounded-full transition-colors duration-1000 ease-in-out">
+    <Link href="/whitelist" className="relative gradient-border-div text-white text-center bg-[#121010]/50 font-medium outline-transparent py-[10px] px-5 rounded-full transition-colors duration-1000 ease-in-out">
       Join Whitelist
     </Link>
   </div>

@@ -148,7 +148,7 @@ export const Navbar = () => {
           )}
         </ul>
         <div className="hidden md:flex">
-          <Button variant="dark" href="/coming-soon">
+          <Button variant="dark" href="/waitlist">
             Join Presale
           </Button>
         </div>
