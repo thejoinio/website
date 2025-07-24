@@ -1,7 +1,7 @@
 import Image from "next/image";
 import joinTokens from '@/assets/images/join-tokens.png';
 
-const Vector = () => <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="605" viewBox="0 0 1440 605" fill="none" className="absolute z-50" style={{filter: "blur(250px)"}}>
+const Vector = () => <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="605" viewBox="0 0 1440 605" fill="none" className="absolute z-30" style={{filter: "blur(250px)"}}>
   <g filter="url(#filter0_f_1115_24219)">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M975.708 313.426C1051.83 308.551 1130.54 314.245 1190.58 361.319C1257.75 413.984 1296.28 492.162 1310.95 576.268C1329.25 681.154 1344.67 796.465 1281.43 882.102C1211.48 976.817 1090.7 1055.43 975.708 1030.25C866.076 1006.23 861.594 849.127 779.827 772.224C692.141 689.754 490.87 696.648 493.017 576.268C495.176 455.22 680.401 445.065 786.695 387.184C848.444 353.559 905.548 317.919 975.708 313.426Z" fill="url(#paint0_linear_1115_24219)"/>
   </g>

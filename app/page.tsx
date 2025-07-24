@@ -4,6 +4,7 @@ import Events from "@/components/events";
 import FAQSSection from "@/components/faqs-section";
 import Hero from "@/components/hero";
 import JoinTokenSection from "@/components/join-token-section";
+import JoinUs from "@/components/join-us";
 import Possibilities from "@/components/possibilities";
 import PresaleSection from "@/components/presale-section";
 import WaitlistSection from "@/components/waitlist-section";
@@ -20,6 +21,7 @@ export default function Home() {
       <Community />
       <WaitlistSection />
       <FAQSSection />
+      <JoinUs />
     </main>
   );
 }

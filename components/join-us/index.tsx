@@ -10,7 +10,7 @@ export default function JoinUs () {
                         <p className="font-bold text-2xl/normal xs:text-4xl/normal md:text-5xl/normal text-center max-w-[16ch]">With Join, Every Dream Is A Possibility</p>
                     </div>
                     <div className="flex justify-center">
-                        <Button variant="white" href="/coming-soon">Join Whitelisting</Button>
+                        <Button variant="white" href="/whitelist">Join Whitelisting</Button>
                     </div>
                 </div>
             </div>

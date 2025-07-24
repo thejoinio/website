@@ -1,10 +1,18 @@
+'use client';
+import { toast } from "@/hooks/use-toast";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../button";
 import { DiscordIcon, LinkedinIcon, Star, StarSmall, TelegramIcon, TwitterIcon } from "@/assets/svg";
 import joinLogo from '@/assets/images/logo.png';
+import { handleSubmit } from "@/lib/helper";
+import { useState } from "react";
 
 export default function Footer () {
+    const [email, setEmail] = useState("");
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const resetEmail = () => setEmail("");
+
     const icons = [
         {
           title: "Telegram",
@@ -45,11 +53,11 @@ export default function Footer () {
 
     return (
         <footer className="py-20 footer-pattern font-[family-name:var(--font-tsb)]">
-            <form className="flex flex-col gap-5 w-full max-w-5xl mx-auto px-4 md:px-10 mb-8 xs:mb-10 md:mb-[90px]">
-                <label htmlFor="email">Be the first to know Join updates</label>
+            <form onSubmit={(e)=>handleSubmit({event: e, email, setStatus, resetEmail, toast, type: 'thejoin-subscribe'})} className="flex flex-col gap-5 w-full max-w-5xl mx-auto px-4 md:px-10 mb-8 xs:mb-10 md:mb-[90px]">
+                <label htmlFor="email">Be the first to know JOIN updates</label>
                 <div className="flex gap-2 border-b border-[#4C4C4C] focus-within:border-white transition duration-200">
-                    <input type="text" id="email" placeholder="Your e-mail" className="flex bg-transparent w-full outline-none placeholder:text-[#999] leading-normal" />
-                    <Button type="submit">Subscribe</Button>
+                    <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)} id="email" placeholder="Your e-mail" className="flex bg-transparent w-full outline-none placeholder:text-[#999] leading-normal" />
+                    <Button type="submit" disabled={status === 'loading'}>{status === 'loading' ? "Subscribing..." : `Subscribe`}</Button>
                 </div>
             </form>
             <div className="flex flex-col gap-8 xs:gap-8 md:gap-[50px] w-full max-w-7xl mx-auto px-4 md:px-10 pt-8 xs:pt-10 sm:pt-20">
