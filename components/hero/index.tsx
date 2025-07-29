@@ -27,7 +27,7 @@ const PrelaunchQuest = () => (
 
 export default function Hero() {
   return (
-    <section className="fullscreen-container relative gap-4 font-[family-name:var(--font-geist-sans)] w-full mx-auto overflow-hidden pt-20 px-5 md:px-10 lg:px-20">
+    <section className="fullscreen-container relative gap-4 w-full mx-auto overflow-hidden pt-20 px-5 md:px-10 lg:px-20">
       <div className="flex flex-col gap-[72px] pt-[60px]">
         <div className="flex flex-col gap-[22px] relative hero-heading">
           <h1 className="text-3xl/tight xs:text-[40px]/normal md:text-[64px]/normal font-medium max-w-[13ch] xs:max-w-[18ch] mx-auto text-center">
