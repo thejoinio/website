@@ -28,7 +28,11 @@ const NumberOfUsers: React.FC = () => {
   }, []);
 
   if (error) {
-    return null;
+    return (
+      <p className="text-sm font-medium bg-[linear-gradient(84deg,#6065A4_-33.49%,#0F1625_37.89%,#6065A4_117.87%)] p-2.5 rounded-lg px-3">
+      4260+ Joined
+    </p>
+  );
   }
 
   if (loading || currentNumber === null) {
