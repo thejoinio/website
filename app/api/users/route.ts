@@ -56,7 +56,7 @@ export async function GET() {
       console.log('Number updated:', newNumber); 
     }
 
-    return NextResponse.json({ number: data.value });
+    return NextResponse.json({ number: data.value || 4260 });
 
   } catch (error) {
     console.error('Error getting/updating number:', error);
